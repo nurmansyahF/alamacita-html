@@ -193,13 +193,13 @@ function initMatterJS() {
         }
     });
     
-    const sh = 300,
+    const sh = 320,
           sw = window.innerWidth;
 
-    var ground = Bodies.rectangle(sw / 2, sh + 10, sw + 100, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
+    var ground = Bodies.rectangle(sw / 2 + 10, sh + 10, sw + 100, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
     var wallLeft = Bodies.rectangle(-50, 0, 100, sh * 2, { isStatic: true,render: { fillStyle: '#FFFFFF' } });
     var wallRight = Bodies.rectangle(sw + 50, 0, 100, sh * 2, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
-    var roof = Bodies.rectangle(sw / 2, -10, sw, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' }});
+    var roof = Bodies.rectangle(sw / 2  + 10, 0, sw, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' }});
 
     var shapes = [];
     var texturePaths = [
@@ -211,7 +211,7 @@ function initMatterJS() {
         './images/footer-shape-6.svg'
     ];
 
-    const shapeCount = 32;
+    const shapeCount = 15;
     // const shapeWidth = sw / shapeCount;
     const aspectRatio = 133 / 40; // Menggunakan aspek rasio dasar dari shape
     const shapeHeight = 50; // Menyesuaikan tinggi agar proporsional
@@ -219,7 +219,7 @@ function initMatterJS() {
 
     for (let i = 0; i < shapeCount; i++) {
         var shape = Bodies.rectangle(
-            i * shapeWidth / 3, // Menyebarkan shape sepanjang canvas
+            i * shapeWidth / 1.5, // Menyebarkan shape sepanjang canvas
             Math.random() * (sh - shapeHeight), // Posisi Y acak di dalam batas kanvas
             shapeWidth, 
             shapeHeight, 
@@ -254,13 +254,35 @@ function initMatterJS() {
     mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
     mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
 
-    let click = false;
+    let click = true;
     document.addEventListener('mousedown', () => click = true);
     document.addEventListener('mousemove', () => click = false);
     document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
+    document.addEventListener('mousewheel', () => console.log('click'));
 
-    Engine.run(engine);
+    Matter.Runner.run(engine);
     Render.run(render);
+
+    let isCanvasVisible = false;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            isCanvasVisible = entry.isIntersecting;
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(document.getElementById('footerCanvas'));
+
+    window.addEventListener('scroll', () => {
+        if (!isCanvasVisible) return;
+        console.log('masuk')
+        shapes.forEach(shape => {
+            Matter.Body.applyForce(shape, shape.position, {
+                x: (Math.random() - 0.5) * 0,
+                y: (Math.random() - 0.5) * 0.2
+            });
+        });
+    });
 }
 
 window.onload = initMatterJS;

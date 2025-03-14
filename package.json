@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev":  "npx @tailwindcss/cli -i ./src/input.css -o ./dist/style/main.css --watch"
   },
-  "author": "",
+  "author": "Achmad Faisal N",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
