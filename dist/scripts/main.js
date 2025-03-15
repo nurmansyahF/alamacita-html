@@ -101,7 +101,7 @@ $(document).ready(function() {
                 $img.each(function (index) {
                     let speedFactor = (index % 2 === 0) ? .2 : .5; // Even to the right, odd to the left
                     let scrollAmount = (scrollTop - sectionTop) * speedFactor;
-                    console.log(scrollAmount)
+                    // console.log(scrollAmount)
                     
     
                     $(this).css("transform", `translateY(${scrollAmount}px)`);
@@ -202,14 +202,10 @@ function initMatterJS() {
     var roof = Bodies.rectangle(sw / 2  + 10, 0, sw, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' }});
 
     var shapes = [];
-    var texturePaths = [
-        './images/footer-shape-1.svg',
-        './images/footer-shape-2.svg',
-        './images/footer-shape-3.svg',
-        './images/footer-shape-4.svg',
-        './images/footer-shape-5.svg',
-        './images/footer-shape-6.svg'
-    ];
+    var texturePaths = $('#footerCanvas').data('texture'); 
+    if (typeof texturePaths === 'string') {
+        texturePaths = JSON.parse(texturePaths); // Parsing jika masih string
+    }
 
     const shapeCount = 15;
     // const shapeWidth = sw / shapeCount;
@@ -257,8 +253,8 @@ function initMatterJS() {
     let click = true;
     document.addEventListener('mousedown', () => click = true);
     document.addEventListener('mousemove', () => click = false);
-    document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
-    document.addEventListener('mousewheel', () => console.log('click'));
+    // document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
+    // document.addEventListener('mousewheel', () => console.log('click'));
 
     Matter.Runner.run(engine);
     Render.run(render);
@@ -275,7 +271,7 @@ function initMatterJS() {
 
     window.addEventListener('scroll', () => {
         if (!isCanvasVisible) return;
-        console.log('masuk')
+        // console.log('masuk')
         shapes.forEach(shape => {
             Matter.Body.applyForce(shape, shape.position, {
                 x: (Math.random() - 0.5) * 0,

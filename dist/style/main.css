@@ -654,14 +654,8 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
-  }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
   }
   .w-2\/3 {
     width: calc(2/3 * 100%);
@@ -689,9 +683,6 @@
   }
   .w-screen {
     width: 100vw;
-  }
-  .max-w-5 {
-    max-width: calc(var(--spacing) * 5);
   }
   .max-w-5\/12 {
     max-width: calc(5/12 * 100%);
@@ -725,9 +716,6 @@
   }
   .flex-1 {
     flex: 1;
-  }
-  .flex-5 {
-    flex: 5;
   }
   .flex-5\/12 {
     flex: calc(5/12 * 100%);
@@ -1621,9 +1609,6 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
   }
@@ -1659,9 +1644,6 @@
   }
   .py-\[60px\] {
     padding-block: 60px;
-  }
-  .ps-3 {
-    padding-inline-start: calc(var(--spacing) * 3);
   }
   .ps-3\.5 {
     padding-inline-start: calc(var(--spacing) * 3.5);
