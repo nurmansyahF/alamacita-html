@@ -1763,6 +1763,10 @@
     --tw-leading: 1.2;
     line-height: 1.2;
   }
+  .leading-\[1\.2em\] {
+    --tw-leading: 1.2em;
+    line-height: 1.2em;
+  }
   .leading-\[1\.4\] {
     --tw-leading: 1.4;
     line-height: 1.4;
@@ -1822,10 +1826,6 @@
   .tracking-\[0\.05rem\] {
     --tw-tracking: 0.05rem;
     letter-spacing: 0.05rem;
-  }
-  .tracking-\[120\%\] {
-    --tw-tracking: 120%;
-    letter-spacing: 120%;
   }
   .text-balance {
     text-wrap: balance;

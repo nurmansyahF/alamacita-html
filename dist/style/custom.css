@@ -368,7 +368,8 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 }
 .box-form{
     position: relative;
-    min-height: 560px;
+    /* min-height: 560px; */
+    min-height: 640px;
 }
 .box-form .step{
     padding: 40px;
@@ -488,9 +489,10 @@ body.enroll-show{
     top: 0;
     left: 0;
     width: 100%;
+    /* min-height: 100vh; */
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    /* overflow-x: hidden; */
+    overflow: scroll;
     z-index: 99999;
 }
 
@@ -527,6 +529,18 @@ canvas{
 }
 /* Responsive */
 @media only screen and (max-width: 500px) {
+    .section-three .cloud-aksen:nth-child(1){
+        width: 60px;
+        height: 60px;
+        right: 30px;
+        top: -30px;
+    }
+    .section-three .cloud-aksen.-bottom-20{
+        width: 120px;
+        height: 120px;
+        left: 0px;
+        bottom: -60px;
+    }
     .mileston-stage ul::before{
         left: 23px;
     }
@@ -548,10 +562,16 @@ canvas{
     .photo-list img{
         width: 90%;
     }
+    .enrollment-section:not(.poped){
+        overflow: hidden;
+    }
     .box-form{
-        min-height: 650px;
+        min-height: 700px;
     }
     .cus-list b{
         font-size: 18px;
+    }
+    .box-form .step h2{
+        font-size: 28px;
     }
 }

@@ -1,15 +1,15 @@
 $(document).ready(function() {
     // Initialize Lenis
-    const lenis = new Lenis({
-        autoRaf: true,
-        duration: 1.1, // Durasi scroll dalam detik
-        smooth: true
-    });
+    // const lenis = new Lenis({
+    //     autoRaf: true,
+    //     duration: 1.1, // Durasi scroll dalam detik
+    //     smooth: true
+    // });
     
-    // Listen for the scroll event and log the event data
-    lenis.on('scroll', (e) => {
-        // console.log(e);
-    });
+    // // Listen for the scroll event and log the event data
+    // lenis.on('scroll', (e) => {
+    //     // console.log(e);
+    // });
 
     $('.header').each(function(){
         let lastScrollTop = 0;
@@ -207,7 +207,7 @@ function initMatterJS() {
         texturePaths = JSON.parse(texturePaths); // Parsing jika masih string
     }
 
-    const shapeCount = 15;
+    const shapeCount = 25;
     // const shapeWidth = sw / shapeCount;
     const aspectRatio = 133 / 40; // Menggunakan aspek rasio dasar dari shape
     const shapeHeight = 50; // Menyesuaikan tinggi agar proporsional
