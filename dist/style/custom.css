@@ -368,8 +368,8 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 }
 .box-form{
     position: relative;
-    /* min-height: 560px; */
-    min-height: 640px;
+    /* min-height: 560px; min-height: 640px;*/
+    min-height: 790px;
 }
 .box-form .step{
     padding: 40px;
@@ -381,7 +381,9 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     top: 0;
     left: 0;
     transition: all .3s ease-in-out;
+    min-height: 795px;
 }
+
 .box-form .step.step-one{
     transform: rotate(-1deg);
     z-index: 20;
@@ -517,6 +519,28 @@ canvas{
     outline: 0;
 }
 @media only screen and (max-width: 1000px) {
+    .header-logo img{
+        max-height: 34px;
+    }
+
+    .section-three .cloud-aksen:nth-child(1){
+        width: 80px;
+        height: 80px;
+        right: 40px;
+        top: -40px;
+    }
+    .section-three .cloud-aksen.-bottom-20{
+        left: 20px;
+        bottom: -60px;
+    }
+
+    .section-four .smalltitle.text-secondary{
+        font-size: 20px;
+    }
+    .section-four .misc{
+        font-size: 16px;
+    }
+
     .photo-list{
         margin-top: 0;
     }
@@ -529,6 +553,25 @@ canvas{
 }
 /* Responsive */
 @media only screen and (max-width: 500px) {
+    .header-logo img{
+        max-height: 30px;
+    }
+    .section-two .container{
+        height: 100vh;
+    }
+    .section-three h2,
+    .section-four h2,
+    .section-six h2{
+        font-size: 28px;
+        margin-bottom: 24px;
+    }
+    .section-six .smalltitle.text-secondary{
+        font-size: 20px;
+    }
+    .section-four .misc{
+        font-size: 16px;
+        line-height: 1.5em;
+    }
     .section-three .cloud-aksen:nth-child(1){
         width: 60px;
         height: 60px;
@@ -559,6 +602,12 @@ canvas{
     .box-form .step{
         padding: 20px;
     }
+    .section-eight{
+        height: 120vh;
+    }
+    .photo-list{
+        height: 90vh;
+    }
     .photo-list img{
         width: 90%;
     }
@@ -566,12 +615,12 @@ canvas{
         overflow: hidden;
     }
     .box-form{
-        min-height: 700px;
+        min-height: 800px;
     }
     .cus-list b{
         font-size: 18px;
     }
     .box-form .step h2{
-        font-size: 28px;
+        font-size: 20px;
     }
 }

@@ -193,47 +193,65 @@ function initMatterJS() {
         }
     });
     
-    const sh = 320,
-          sw = window.innerWidth;
+    let shapes = [];
+    let ground, wallLeft, wallRight, roof;
 
-    var ground = Bodies.rectangle(sw / 2 + 10, sh + 10, sw + 100, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
-    var wallLeft = Bodies.rectangle(-50, 0, 100, sh * 2, { isStatic: true,render: { fillStyle: '#FFFFFF' } });
-    var wallRight = Bodies.rectangle(sw + 50, 0, 100, sh * 2, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
-    var roof = Bodies.rectangle(sw / 2  + 10, 0, sw, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' }});
-
-    var shapes = [];
-    var texturePaths = $('#footerCanvas').data('texture'); 
-    if (typeof texturePaths === 'string') {
-        texturePaths = JSON.parse(texturePaths); // Parsing jika masih string
+    function getShapeProperties() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth > 1024) {
+            return { shapeCount: 25, shapeHeight: 50 };
+        } else if (screenWidth > 760) {
+            return { shapeCount: 30, shapeHeight: 30 };
+        } else {
+            return { shapeCount: 30, shapeHeight: 25 };
+        }
     }
 
-    const shapeCount = 25;
-    // const shapeWidth = sw / shapeCount;
-    const aspectRatio = 133 / 40; // Menggunakan aspek rasio dasar dari shape
-    const shapeHeight = 50; // Menyesuaikan tinggi agar proporsional
-    const shapeWidth = shapeHeight * aspectRatio;
+    function createWorld() {
+        World.clear(world);
+        shapes = [];
+        
+        const sh = 320,
+              sw = window.innerWidth;
 
-    for (let i = 0; i < shapeCount; i++) {
-        var shape = Bodies.rectangle(
-            i * shapeWidth / 1.5, // Menyebarkan shape sepanjang canvas
-            Math.random() * (sh - shapeHeight), // Posisi Y acak di dalam batas kanvas
-            shapeWidth, 
-            shapeHeight, 
-            {
-                chamfer: { radius: 10 },
-                render: {
-                    sprite: { 
-                        texture: texturePaths[i % texturePaths.length], 
-                        xScale: shapeWidth / 133, 
-                        yScale: shapeHeight / 40 
+        ground = Bodies.rectangle(sw / 2, sh + 10, sw + 100, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
+        wallLeft = Bodies.rectangle(-50, 0, 100, sh * 2, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
+        wallRight = Bodies.rectangle(sw + 50, 0, 100, sh * 2, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
+        roof = Bodies.rectangle(sw / 2, 0, sw, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' }});
+
+        var texturePaths = $('#footerCanvas').data('texture'); 
+        if (typeof texturePaths === 'string') {
+            texturePaths = JSON.parse(texturePaths);
+        }
+
+        const { shapeCount, shapeHeight } = getShapeProperties();
+        const aspectRatio = 133 / 40;
+        const shapeWidth = shapeHeight * aspectRatio;
+
+        for (let i = 0; i < shapeCount; i++) {
+            var shape = Bodies.rectangle(
+                i * shapeWidth / 1.5,
+                Math.random() * (sh - shapeHeight),
+                shapeWidth, 
+                shapeHeight, 
+                {
+                    chamfer: { radius: 10 },
+                    render: {
+                        sprite: { 
+                            texture: texturePaths[i % texturePaths.length], 
+                            xScale: shapeWidth / 133, 
+                            yScale: shapeHeight / 40 
+                        }
                     }
                 }
-            }
-        );
-        shapes.push(shape);
+            );
+            shapes.push(shape);
+        }
+
+        World.add(world, [ground, wallLeft, wallRight, roof, ...shapes]);
     }
 
-    World.add(engine.world, [ground, wallLeft, wallRight, roof, ...shapes]);
+    createWorld();
 
     var mouse = Mouse.create(render.canvas),
         mouseConstraint = MouseConstraint.create(engine, {
@@ -250,12 +268,6 @@ function initMatterJS() {
     mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
     mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
 
-    let click = true;
-    document.addEventListener('mousedown', () => click = true);
-    document.addEventListener('mousemove', () => click = false);
-    // document.addEventListener('mouseup', () => console.log(click ? 'click' : 'drag'));
-    // document.addEventListener('mousewheel', () => console.log('click'));
-
     Matter.Runner.run(engine);
     Render.run(render);
 
@@ -271,7 +283,6 @@ function initMatterJS() {
 
     window.addEventListener('scroll', () => {
         if (!isCanvasVisible) return;
-        // console.log('masuk')
         shapes.forEach(shape => {
             Matter.Body.applyForce(shape, shape.position, {
                 x: (Math.random() - 0.5) * 0,
@@ -279,7 +290,16 @@ function initMatterJS() {
             });
         });
     });
+
+    window.addEventListener('resize', () => {
+        render.options.width = window.innerWidth;
+        render.canvas.width = window.innerWidth;
+        getShapeProperties();
+        createWorld();
+    });
 }
 
 window.onload = initMatterJS;
+
+
 
