@@ -6,6 +6,7 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-50: oklch(0.971 0.013 17.38);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-gray-50: oklch(0.985 0.002 247.839);
@@ -627,6 +628,9 @@
   .h-\[95vh\] {
     height: 95vh;
   }
+  .h-\[98vh\] {
+    height: 98vh;
+  }
   .h-\[100vh\] {
     height: 100vh;
   }
@@ -976,9 +980,6 @@
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .grid-cols-none {
     grid-template-columns: none;
   }
@@ -1140,13 +1141,6 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .space-y-10 {
-    :where(& > :not(:last-child)) {
-      --tw-space-y-reverse: 0;
-      margin-block-start: calc(calc(var(--spacing) * 10) * var(--tw-space-y-reverse));
-      margin-block-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-y-reverse)));
-    }
   }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
@@ -1420,6 +1414,9 @@
   .bg-primary {
     background-color: #006391;
   }
+  .bg-red-50 {
+    background-color: var(--color-red-50);
+  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1492,6 +1489,9 @@
   }
   .bg-\[auto_50\%\] {
     background-size: auto 50%;
+  }
+  .bg-\[auto_100\%\] {
+    background-size: auto 100%;
   }
   .bg-\[auto_120\%\] {
     background-size: auto 120%;
@@ -1652,9 +1652,6 @@
   .p-9 {
     padding: calc(var(--spacing) * 9);
   }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
-  }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
@@ -1666,12 +1663,6 @@
   }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
-  }
-  .py-4 {
-    padding-block: calc(var(--spacing) * 4);
-  }
-  .py-\[5px\] {
-    padding-block: 5px;
   }
   .py-\[60px\] {
     padding-block: 60px;
@@ -2709,6 +2700,11 @@
   .md\:flex-10\/12 {
     @media (width >= 48rem) {
       flex: calc(10/12 * 100%);
+    }
+  }
+  .md\:grid-cols-3 {
+    @media (width >= 48rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
   .md\:py-\[90px\] {

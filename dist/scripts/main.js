@@ -1,15 +1,22 @@
 $(document).ready(function() {
-    // Initialize Lenis
-    // const lenis = new Lenis({
-    //     autoRaf: true,
-    //     duration: 1.1, // Durasi scroll dalam detik
-    //     smooth: true
-    // });
+    if (window.matchMedia("(min-width: 1023px)").matches) {
+        // Initialize Lenis hanya di desktop
+        const lenis = new Lenis({
+            autoRaf: true,
+            duration: 1.1, // Durasi scroll dalam detik
+            smooth: true
+        });
     
-    // // Listen for the scroll event and log the event data
-    // lenis.on('scroll', (e) => {
-    //     // console.log(e);
-    // });
+        lenis.on('scroll', (e) => {
+            // console.log(e);
+        });
+    
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
 
     $('.header').each(function(){
         let lastScrollTop = 0;
@@ -83,6 +90,18 @@ $(document).ready(function() {
                 });
             }
         });
+        // $('.rellax').each(function() {
+        //     var parent = $(this);
+        //     var parentOffset = parent.offset().top; // Get the offset of the current parent
+    
+        //     // Check if the current scroll position is within the bounds of the parent
+        //     if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
+        //         var offset = (scrollTop - parentOffset) * 0.5; // Adjust parallax speed
+        //         parent.find('.bg').css({
+        //             'transform': 'translate3d(0px, ' + offset + 'px, 0px)'
+        //         });
+        //     }
+        // });
     });
 
     $(document).on("scroll", function () {
@@ -135,7 +154,6 @@ $(document).ready(function() {
             $(this).addClass('hidden')
         })
     })
-
     
 });
 $('.enrollclick').each(function(){
@@ -181,12 +199,16 @@ function initMatterJS() {
     var engine = Engine.create(),
         world = engine.world;
 
+    function getCanvasHeight() {
+        return window.innerWidth > 764 ? 300 : 200;
+    }
+
     var render = Render.create({
         element: document.getElementById('footerCanvas'),
         engine: engine,
         options: {
             width: window.innerWidth,
-            height: 300,
+            height: getCanvasHeight(),
             pixelRatio: 2,
             background: '#FFF',
             wireframes: false,
@@ -211,7 +233,7 @@ function initMatterJS() {
         World.clear(world);
         shapes = [];
         
-        const sh = 320,
+        const sh = getCanvasHeight(),
               sw = window.innerWidth;
 
         ground = Bodies.rectangle(sw / 2, sh + 10, sw + 100, 100, { isStatic: true, render: { fillStyle: '#FFFFFF' } });
@@ -291,15 +313,15 @@ function initMatterJS() {
         });
     });
 
-    window.addEventListener('resize', () => {
-        render.options.width = window.innerWidth;
-        render.canvas.width = window.innerWidth;
-        getShapeProperties();
-        createWorld();
-    });
+    // window.addEventListener('resize', () => {
+    //     render.options.width = window.innerWidth;
+    //     render.options.height = getCanvasHeight();
+    //     render.canvas.width = window.innerWidth;
+    //     render.canvas.height = getCanvasHeight();
+    //     createWorld();
+    // });
 }
 
 window.onload = initMatterJS;
-
 
 

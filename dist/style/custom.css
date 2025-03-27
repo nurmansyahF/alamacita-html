@@ -442,6 +442,17 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     transition-delay: .5s;
     z-index: 20;
 }
+
+.section-seven .bg{
+    /* background-image: url(../images/bg-paralax-2.jpg); */
+    /* background-size: cover;
+    background-attachment: scroll; */
+}
+/* .rellax .bg{
+    transition: all .3s linear;
+} */
+
+
 .form-control{
     background: #FFF;
     padding: 8px 16px;
@@ -550,6 +561,19 @@ canvas{
     .photo-list:first-child img:nth-child(even){
         margin-left: 8vw;
     }
+    @supports (-webkit-touch-callout: none) {
+        .rellax .bg {
+            background-attachment: fixed;
+        }
+    }
+    .rellax{
+        height: 80vh;
+    }
+    .rellax .bg{
+        height: 80vh;
+        background-attachment: unset;
+        /* background-size: auto; */
+    }
 }
 /* Responsive */
 @media only screen and (max-width: 500px) {
@@ -565,8 +589,10 @@ canvas{
         font-size: 28px;
         margin-bottom: 24px;
     }
-    .section-six .smalltitle.text-secondary{
+    .section-four .smalltitle,
+    .section-six .smalltitle{
         font-size: 20px;
+        margin-bottom: 16px;
     }
     .section-four .misc{
         font-size: 16px;
@@ -622,5 +648,15 @@ canvas{
     }
     .box-form .step h2{
         font-size: 20px;
+    }
+    .enrollment-section .cloud-aksen{
+        width: 150px;
+        height: 150px;
+        left: -90px;
+        top: -100px;
+    }
+    .enrollment-section.poped .close{
+        top: 20px;
+        right: 20px;
     }
 }
