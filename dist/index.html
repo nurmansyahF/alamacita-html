@@ -246,7 +246,7 @@
           <p class="text-primary text-lg leading-[1.5] lg:max-w-[580px] mx-auto text-center">Our admission and education team will share about 
             our school’s facilities and programs.</p>
           <div class="box-form mt-12 lg:max-w-[644px] mx-auto">
-            <form onsubmit="return prosesForm(event)" class="relative">
+            <form onsubmit="return prosesForm(event)" class="relative" >
               <div class="cloud-aksen absolute -top-20 -left-20 z-30 max-w-[155px]">
                 <img src="images/cloud-aksen.svg" alt="" class="object-contain">
               </div>
@@ -256,35 +256,34 @@
                   <div class="col-span-full">
                     <label for="paren-f-name">Parent’s First Name</label>
                     <div class="mt-2">
-                      <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter parent’s name here">
+                      <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter parent’s name here" required>
                     </div>
                   </div>
                   <div class="col-span-full">
                     <label for="paren-f-name">Child’s Complete Name</label>
                     <div class="mt-2">
-                      <input type="text" name="last-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s complete name here">
+                      <input type="text" name="last-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s complete name here" required>
                     </div>
                   </div>
                   <div class="col-span-full">
                     <label for="paren-f-name">Child’s Date of Birth:</label>
                       <div class="mt-2">
-                        <input type="date" name="dob" id="dob" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date">
-                        
+                        <input type="date" name="dob" id="dob" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
                       </div>
                   </div>
                   <div class="col-span-full">
                     <label for="paren-f-name">Preferred Program</label>
                     <div class="mt-2 grid md:grid-cols-3 grid-cols-2 gap-2">
                       <label class="block">
-                          <input type="radio" name="time" value="Nursery" class="hidden peer">
+                          <input type="radio" name="time" value="Nursery" class="hidden peer" required>
                           <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Nursery</div>
                       </label>
                       <label class="block">
-                          <input type="radio" name="time" value="Kindy" class="hidden peer">
+                          <input type="radio" name="time" value="Kindy" class="hidden peer" required>
                           <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Kindy</div>
                       </label>
                       <label class="block">
-                          <input type="radio" name="time" value="Elementary" class="hidden peer">
+                          <input type="radio" name="time" value="Elementary" class="hidden peer" required>
                           <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Elementary</div>
                       </label>
                     </div>
@@ -292,34 +291,21 @@
                   <div class="col-span-full">
                     <label for="paren-f-name">Domicile</label>
                     <div class="mt-2">
-                      <input type="email" name="domicile" id="domicile"  class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter domicile here">
+                      <input type="text" name="domicile" id="domicile" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter domicile here" required>
                     </div>
                   </div>
                   <div class="col-span-full">
                     <label for="paren-f-name">Email</label>
                     <div class="mt-2">
-                      <input type="email" name="email" id="email" autocomplete="emailx" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter email address here">
+                      <input type="email" name="email" id="email" autocomplete="emailx" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter email address here" required>
                     </div>
                   </div>
                   <div class="col-span-full">
                     <label for="paren-f-name">Contact Number</label>
                     <div class="mt-2">
-                      <input type="text" name="contact_number" id="contact_number" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter contact number here">
+                      <input type="text" name="contact_number" id="contact_number" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter contact number here" required>
                     </div>
                   </div>
-                  
-                  <!-- <div class="sm:col-span-3">
-                    <label for="paren-f-name">Child’s First Name</label>
-                    <div class="mt-2">
-                      <input type="text" name="child-first-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s first name here">
-                    </div>
-                  </div>
-                  <div class="sm:col-span-3">
-                    <label for="paren-f-name">Child’s Last Name</label>
-                    <div class="mt-2">
-                      <input type="text" name="child-last-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s last name here">
-                    </div>
-                  </div> -->
                   <div class="col-span-full text-right mt-10">
                     <a href="javascript:void(0)" class="form-next bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white">Next</a>
                   </div>
@@ -330,7 +316,7 @@
                 <div class="col-span-full mb-4">
                   <label for="paren-f-name">Date of Visit</label>
                     <div class="mt-2">
-                      <input type="date" name="phone_number" id="date" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date">
+                      <input type="date" name="phone_number" id="date" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
                       <small class="text-primary mt-2 opacity-70">The school tour is available on weekdays, Monday - Friday 08:00 to 15:00. Visit by appointment.</small>
                     </div>
                 </div>
@@ -367,38 +353,6 @@
                   <a href="javascript:void(0)" class="form-back bg-white py-2 px-4 rounded-[50px] group hover:bg-blend-lighten text-secondary border border-secondary ">Back</a>
                   <button type="submit" class="bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white hover:cursor-pointer">Submit Booking</button>
                 </div>
-                <!-- <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6 h-full">
-                  
-                  <div class="col-span-full">
-                    <label for="paren-f-name">Time of Visit</label>
-                    <div class="mt-2 grid grid-cols-2 gap-2">
-                      <label class="block">
-                          <input type="radio" name="time" value="9.30AM - 10.00AM" class="hidden peer">
-                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">9.30AM - 10.00AM</div>
-                      </label>
-                      <label class="block">
-                          <input type="radio" name="time" value="10.30AM - 11.00AM" class="hidden peer">
-                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">10.30AM - 11.00AM</div>
-                      </label>
-                      <label class="block">
-                          <input type="radio" name="time" value="10.30AM - 11.00AM" class="hidden peer">
-                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">10.30AM - 11.00AM</div>
-                      </label>
-                    </div>
-                  </div>
-                  
-                  <div class="col-span-full">
-                    <div class="relative max-w-sm">
-                      <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                        </svg>
-                      </div>
-                      <input datepicker id="default-datepicker" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
-                    </div>
-                  </div>
-                  
-                </div> -->
               </div>
             </form>
           </div>

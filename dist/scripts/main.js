@@ -131,13 +131,7 @@ $(document).ready(function() {
         }
     });
     
-    $('.form-next').each(function(){
-        $(this).on('click', function(){
-            $(this).closest('.step').removeClass('flipin').addClass('flipout');
-            $(this).closest('.step').next('.step-two').toggleClass('show');
-        })
-        
-    })
+    
     $('.form-back').each(function(){
         $(this).on('click', function(){
             $(this).closest('.step').removeClass('show');
@@ -156,16 +150,7 @@ $(document).ready(function() {
     })
     
 });
-$('.enrollclick').each(function(){
-    let t = $(this);
-    let $enrollSection = $('body').find('.enrollment-section');
-    t.on('click', function(){
-        if($enrollSection.length > 0){
-            $('body').addClass('enroll-show');
-            $enrollSection.addClass('poped').find('.close').removeClass('hidden');
-        }
-    })
-})
+
 function prosesForm(event) {
     event.preventDefault(); // Mencegah form dikirim ke server
 
@@ -175,6 +160,114 @@ function prosesForm(event) {
 
     return false; // Menghentikan pengiriman form
 }
+
+    $('.enrollment-section form .step-one').each(function(){
+        var t = $(this),
+            inputs = t.find('input[required]'),
+            fn = t.find('.form-next');
+    
+        // Hilangkan error saat pengguna mulai mengisi
+        inputs.on('change', function(){
+            if($(this).val() !== ""){
+                $(this).removeClass('border-red-500 outline outline-red-500 absolute left-0 bottom-[-14px]')
+                $(this).parent().removeClass('relative pb-3')
+                $(this).next('.error-message').remove();
+            }
+        });
+    
+        fn.on('click', function(event){
+            console.log('tombol diklik'); // Debug log
+            let hasError = false;
+    
+            inputs.each(function() {
+                const inputField = $(this);
+                const inputType = inputField.attr('type');
+                const inputVal = inputField.val()?.trim();
+                const errorMessage = inputField.next('.error-message');
+    
+                // Hapus error sebelumnya
+                errorMessage.remove();
+                inputField.removeClass('border-red-500 outline outline-red-500');
+    
+                // Cek jika kosong
+                if (!inputVal) {
+                    hasError = true;
+                    inputField.parent().addClass('relative pb-3')
+                    inputField.after('<div class="error-message text-sm mt-2 text-[#EF4444] absolute left-0 bottom-[-14px]">This field is required.</div>');
+                    inputField.addClass('border-red-500 outline outline-red-500');
+                } else if (inputType === 'email') {
+                    // Validasi email format
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(inputVal)) {
+                        hasError = true;
+                        inputField.parent().addClass('relative pb-2')
+                        inputField.after('<div class="error-message text-sm mt-2 text-[#EF4444] absolute left-0 bottom-[-14px]">Please enter a valid email address.</div>');
+                        inputField.addClass('border-red-500 outline outline-red-500');
+                    }
+                }
+            });
+    
+            if (hasError) {
+                return false;
+            } else {
+                // Form lolos validasi
+                $(this).closest('.step').removeClass('flipin').addClass('flipout');
+                $(this).closest('.step').next('.step-two').toggleClass('show');
+            }
+        });
+    });
+    $('.enrollment-section form .step-two').each(function(){
+        var t = $(this),
+            inputs = t.find('input[required]'),
+            fn = t.find('button[type="submit"]');
+    
+        // Hilangkan error saat pengguna mulai mengisi
+        inputs.on('change', function(){
+            if($(this).val() !== ""){
+                $(this).removeClass('border-red-500 outline outline-red-500 absolute left-0 bottom-[-14px]')
+                $(this).parent().removeClass('relative pb-3')
+                $(this).next('.error-message').remove();
+            }
+        });
+    
+        fn.on('click', function(event){
+            console.log('tombol diklik'); // Debug log
+            let hasError = false;
+    
+            inputs.each(function() {
+                const inputField = $(this);
+                const inputType = inputField.attr('type');
+                const inputVal = inputField.val()?.trim();
+                const errorMessage = inputField.next('.error-message');
+    
+                // Hapus error sebelumnya
+                errorMessage.remove();
+                inputField.removeClass('border-red-500 outline outline-red-500');
+    
+                // Cek jika kosong
+                if (!inputVal) {
+                    hasError = true;
+                    inputField.parent().addClass('relative pb-3')
+                    inputField.after('<div class="error-message text-sm mt-2 text-[#EF4444] absolute left-0 bottom-[-14px]">This field is required.</div>');
+                    inputField.addClass('border-red-500 outline outline-red-500');
+                } else if (inputType === 'email') {
+                    // Validasi email format
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(inputVal)) {
+                        hasError = true;
+                        inputField.parent().addClass('relative pb-2')
+                        inputField.after('<div class="error-message text-sm mt-2 text-[#EF4444] absolute left-0 bottom-[-14px]">Please enter a valid email address.</div>');
+                        inputField.addClass('border-red-500 outline outline-red-500');
+                    }
+                }
+            });
+    
+            if (hasError) {
+                return false;
+            }
+        });
+    });
+    
 
 $('.modal-notif').each(function(){
     let t = $(this);
