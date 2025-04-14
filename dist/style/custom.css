@@ -659,4 +659,11 @@ canvas{
         top: 20px;
         right: 20px;
     }
+    .ht-ctc .ctc-analytics.ht_ctc_padding{
+        padding: 10px;
+    }
+    .ht-ctc .ctc-analytics.ht_ctc_padding svg{
+        width: 35px;
+        height: 35px;
+    }
 }

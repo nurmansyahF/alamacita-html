@@ -6,7 +6,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-50: oklch(0.971 0.013 17.38);
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-gray-50: oklch(0.985 0.002 247.839);
@@ -628,9 +627,6 @@
   .h-\[95vh\] {
     height: 95vh;
   }
-  .h-\[98vh\] {
-    height: 98vh;
-  }
   .h-\[100vh\] {
     height: 100vh;
   }
@@ -661,14 +657,8 @@
   .min-h-screen {
     min-height: 100vh;
   }
-  .w-1 {
-    width: calc(var(--spacing) * 1);
-  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
-  }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
   }
   .w-2\/3 {
     width: calc(2/3 * 100%);
@@ -696,9 +686,6 @@
   }
   .w-screen {
     width: 100vw;
-  }
-  .max-w-5 {
-    max-width: calc(var(--spacing) * 5);
   }
   .max-w-5\/12 {
     max-width: calc(5/12 * 100%);
@@ -732,9 +719,6 @@
   }
   .flex-1 {
     flex: 1;
-  }
-  .flex-5 {
-    flex: 5;
   }
   .flex-5\/12 {
     flex: calc(5/12 * 100%);
@@ -1414,9 +1398,6 @@
   .bg-primary {
     background-color: #006391;
   }
-  .bg-red-50 {
-    background-color: var(--color-red-50);
-  }
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1489,9 +1470,6 @@
   }
   .bg-\[auto_50\%\] {
     background-size: auto 50%;
-  }
-  .bg-\[auto_100\%\] {
-    background-size: auto 100%;
   }
   .bg-\[auto_120\%\] {
     background-size: auto 120%;
@@ -1634,9 +1612,6 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
   }
@@ -1666,9 +1641,6 @@
   }
   .py-\[60px\] {
     padding-block: 60px;
-  }
-  .ps-3 {
-    padding-inline-start: calc(var(--spacing) * 3);
   }
   .ps-3\.5 {
     padding-inline-start: calc(var(--spacing) * 3.5);
