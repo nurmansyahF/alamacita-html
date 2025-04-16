@@ -330,25 +330,27 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 .photo-list img{
     width: auto;
     transform: translateY(var(--scroll));
-    object-fit: contain;
+    object-fit: cover;
+    border: 0.5em solid #FFFFFF; /* Changed 8px to em */
+    box-shadow: 0px 1px 4px 0px #00000029;
 }
 .photo-list img.lg{
     /* width: 26rem;
     height: 22.5rem; */
-    width: 26rem; /*416px;*/
-    height: 20rem; /*320px;*/
+    width: 26.5rem; /*416px;*/
+    height: 20.5rem; /*320px;*/
 }
 .photo-list img.md{
     /* width: 18.875rem;
     height: 20rem; */
-    width: 20rem; /*320px;*/
-    height: 22.5rem; /*360px;*/
+    width: 20.5rem; /*320px;*/
+    height: 23.5rem; /*360px;*/
 }
 .photo-list img.sm{
     /* width: 18.875rem;
     height: 15rem; */
-    width: 18.875rem; /*302px;*/
-    height: 15rem; /*240px;*/
+    width: calc(18.875rem + .5rem); /*302px;*/
+    height: 15.5rem; /*240px;*/
 }
 .photo-list:first-child img:nth-child(odd){
     margin-left: 2vw;

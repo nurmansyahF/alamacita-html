@@ -132,6 +132,8 @@ $(document).ready(function() {
     });
     
     
+    
+
     $('.form-back').each(function(){
         $(this).on('click', function(){
             $(this).closest('.step').removeClass('show');
@@ -139,28 +141,27 @@ $(document).ready(function() {
         })
         
     })
+    $('.enrollclick').each(function(){
+        let t = $(this),
+            $enrollSection = $('body').find('.enrollment-section');
+        t.on('click', function(){
+            if($enrollSection.length > 0){
+                $('body').addClass('enroll-show');
+                $enrollSection.addClass('poped').find('.close').removeClass('hidden');
+                $enrollSection.attr('data-lenis-prevent', 'true')
+            }
+        })
+    })
     $('.enrollment-section').each(function(){
         let t = $(this),
             $cls = t.find('.close');
         $cls.on('click', function(){
-            t.removeClass('poped');
+            t.removeClass('poped').removeAttr('data-lenis-prevent');
             $('body').removeClass('enroll-show');
             $(this).addClass('hidden')
         })
     })
     
-});
-
-function prosesForm(event) {
-    event.preventDefault(); // Mencegah form dikirim ke server
-
-    // let nama = document.getElementById("first-name").value;
-    // alert("Form dikirim! Nama: " + nama);
-    $('.modal-notif').toggleClass('show');
-
-    return false; // Menghentikan pengiriman form
-}
-
     $('.enrollment-section form .step-one').each(function(){
         var t = $(this),
             inputs = t.find('input[required]'),
@@ -267,7 +268,18 @@ function prosesForm(event) {
             }
         });
     });
-    
+
+});
+
+function prosesForm(event) {
+    event.preventDefault(); // Mencegah form dikirim ke server
+
+    // let nama = document.getElementById("first-name").value;
+    // alert("Form dikirim! Nama: " + nama);
+    $('.modal-notif').toggleClass('show');
+
+    return false; // Menghentikan pengiriman form
+}
 
 $('.modal-notif').each(function(){
     let t = $(this);
