@@ -582,6 +582,9 @@ canvas{
     .header-logo img{
         max-height: 30px;
     }
+    .header .nav-link:not(.enrollclick){
+        display: none;
+    }
     .section-two .container{
         height: 100vh;
     }
