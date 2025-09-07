@@ -31,6 +31,9 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     position: fixed;
     transform: translateY(0px);
 } */
+ .header.bg-white{
+    background-color: #FFF;
+ }
 .mileston-stage ul{
     list-style: none;
     position: relative;
@@ -228,12 +231,29 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     top: 12px;
     left: 73px;
 }
+.mileston-stage-white ul::before{
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: #FFF;
+    top: 12px;
+    left: 73px;
+    display: none;
+}
 .mileston-stage ul li{
     position: relative;
     padding-left: 120px;
 }
+.mileston-stage-white ul li{
+    position: relative;
+    padding-left: 64px;
+}
 .mileston-stage ul li:not(:last-child){
     margin-bottom: 48px;
+}
+.mileston-stage-white ul li:not(:last-child){
+    margin-bottom: 40px;
 }
 .mileston-stage ul li::before{
     content: "";
@@ -247,11 +267,60 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     left: 64px;
     
 }
+.mileston-stage-white ul li::before,
+.milestone-secondary ul li::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/list-shape-white.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    /* left: 64px; */
+    left: -8px;
+}
+.mileston-stage-white ul li::after{
+    content: "";
+    width: 1px;
+    height: calc(100% + 40px);
+    background: #FFF;
+    position: absolute;
+    left: 1px;
+    top: 5px;
+}
+.milestone-secondary ul li::after{
+    content: "";
+    width: 1px;
+    height: calc(100% + 40px);
+    background: #3A6B0C;
+    position: absolute;
+    left: 1px;
+    top: 5px;
+}
+.milestone-secondary ul li::before{
+    background-image: url(../images/list-shape.svg);
+}
+.mileston-stage-white ul li:last-child::after,
+.mileston-stage-secondary ul li:last-child::after,
+.milestone-secondary ul li:last-child::after{
+    display: none;
+}
+.mileston-stage-white ul li b{
+    font-weight: 500;
+}
+
 .mileston-stage .mileston-title{
     font-size: 24px;
     line-height: 1.1em;
     margin-bottom: 8px;
     letter-spacing: -0.05em;
+}
+
+.activity-wrapp + .activity-wrapp{
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: 1px solid rgba(255,255,255, 0.15);
 }
 
 .curi-list{
@@ -445,6 +514,73 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     z-index: 20;
 }
 
+.focuses-wrapp .grid{
+    border-top: 1px solid rgba(58, 107, 12, 15%);
+    border-bottom: 1px solid rgba(58, 107, 12, 15%);
+}
+.focuses-wrapp .grid + .grid{
+    border-top: 0;
+}
+.focuses-card{
+    border-right: 1px solid rgba(58, 107, 12, 15%);
+    padding: 24px;
+    color: #3A6B0C;
+}
+.focuses-wrapp .grid + .grid{
+    border-top: 0;
+}
+.focuses-wrapp.primary-light .grid{
+    border-top: 1px solid rgba(0, 99, 145, 0.15);
+    border-bottom: 1px solid rgba(0, 99, 145, 0.15);
+}
+.focuses-wrapp.primary-light .focuses-card{
+    border-right: 1px solid rgba(0, 99, 145, 0.15);
+    padding: 24px;
+    color: #006391;
+}
+.focuses-card:first-child{
+    padding-left: 0;
+}
+.focuses-card:nth-child(3n),
+.focuses-wrapp.primary-light .focuses-card:nth-child(3n){
+    border-right: 0;
+}
+.montesorri-wrapp{
+    align-items: center;
+}
+.montesorri-item{
+    position: relative;
+    flex: 0 0 calc(100% / 5);
+    max-width: 328px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.montesorri-item .text{
+    padding: 16px;
+    padding-top: 40px;
+    margin: 0 auto;
+    max-width: 95%;
+}
+.montesorri-item h3,
+.montesorri-item p{
+    position: relative;
+    z-index: 3;
+}
+.montesorri-item .svg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 120%;
+    height: 120%;
+    max-height: 280px;
+    object-fit: cover;
+    transform: translateX(-8%);
+}
+
 .section-seven .bg{
     /* background-image: url(../images/bg-paralax-2.jpg); */
     /* background-size: cover;
@@ -531,6 +667,208 @@ canvas{
     border: 0;
     outline: 0;
 }
+
+.section-activity-light .mileston-stage ul li::after{
+    content: "";
+    width: 1px;
+    height: calc(100% + 40px);
+    background: #3A6B0C;
+    position: absolute;
+    left: 1px;
+    top: 5px;
+}
+.with-dashed{
+    position: relative;
+}
+.with-dashed::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed rgba(58, 107, 12, .25);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-1px);
+    z-index: 0;
+}
+.with-dashed span{
+    position: relative;
+    z-index: 3;
+}
+
+.program-wrapp:not(:last-child){
+    margin-bottom: 64px;
+}
+
+.program-card .thumbnail{
+    border: 8px solid #FFF;
+    position: relative;
+    width: 100%;
+    padding-top: 63.28%;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+    transition: all .3s ease-in-out;
+}
+.program-card:hover{
+    cursor: pointer;
+}
+.program-card:hover .thumbnail{
+    transform: rotate(3deg);
+}
+.program-card .thumbnail img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.kindergartenpage{
+    margin-top: 0;
+}
+.kindergartenpage .masthead-animation{
+    background: #CDE667;
+    position: relative;
+}
+/* .kindergartenpage .masthead-animation::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-25%) translateY(-25%); 
+    margin: auto;
+    clip-path: url(../images/bg-aksen-section-four-white.svg);
+    clip-path: path('M873.246 774.741C871.513 778.207 869.576 781.571 867.536 785.037C864.579 789.93 861.622 794.721 858.359 799.309C850.61 810.624 841.535 821.328 831.542 831.318C830.114 832.745 828.687 834.172 827.259 835.599C827.259 835.599 827.157 835.701 827.055 835.803C824.2 838.454 821.243 841.104 818.388 843.653L818.184 843.856C726.312 922.554 587.84 918.477 500.76 831.42C498.619 829.279 496.478 826.934 494.337 824.692L494.133 824.896L469.966 800.736C469.151 799.92 468.335 799.207 467.417 798.493C456.405 789.828 440.294 790.542 430.097 800.736L405.931 824.896L405.727 824.692C403.586 826.934 401.444 829.177 399.303 831.42C307.839 922.86 159.884 922.86 68.5219 831.42C-22.8406 740.082 -22.8406 592.065 68.5219 500.727C70.7652 498.586 73.0085 496.343 75.3537 494.406L75.1498 494.202L99.316 470.043C109.513 459.849 110.226 443.742 101.559 432.733C100.845 431.917 100.132 431 99.316 430.184L75.1498 406.024L75.3537 405.82C73.1104 403.68 70.8671 401.539 68.6239 399.398C-5.60821 325.084 -19.5777 213.562 26.6134 125.384C28.4488 121.918 30.2842 118.554 32.3236 115.088C35.2806 110.194 38.2377 105.403 41.5006 100.816C41.7046 100.51 41.9085 100.204 42.1124 100L45.1714 95.719C52.0032 86.3405 59.7527 77.3698 68.318 68.8068C69.7455 67.3797 71.173 65.9525 72.6006 64.5254C72.6006 64.5254 72.7026 64.4234 72.8045 64.3215C75.6596 61.6711 78.6166 59.0206 81.4717 56.4721L81.6757 56.2682C173.548 -22.6333 312.223 -18.5557 399.303 68.501C401.444 70.6418 403.586 72.9864 405.625 75.2291L405.829 75.0252L432.341 101.53C443.353 110.296 459.464 109.583 469.66 99.2869L493.827 75.1271L494.031 75.331C496.172 73.0883 498.313 70.8456 500.455 68.603C591.817 -22.8372 739.873 -22.8372 831.236 68.603C922.598 159.941 922.7 307.958 831.236 399.296C829.094 401.437 826.749 403.578 824.506 405.617L824.71 405.82L800.544 429.98C790.347 440.174 789.633 456.179 798.3 467.29L824.914 493.897L824.71 494.1C827.055 496.139 829.298 498.382 831.44 500.523C905.774 574.735 919.641 686.461 873.144 774.639L873.246 774.741Z');
+    background: #A5CC1F ;
+} */
+.kindergartenpage .masthead-animation .bg-animation{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-25%) translateY(-25%);  */
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    mask-image: url('../images/bg-aksen-section-four-white.svg'); 
+    -webkit-mask-image: url('../images/bg-aksen-section-four-white.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 62.5vw;
+    mask-position: center;
+    -webkit-mask-size: contain;
+}
+.kindergartenpage.elementary .masthead-animation .bg-animation{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translateX(-25%) translateY(-25%);  */
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    mask-image: url('../images/making-masthead-2.svg'); 
+    -webkit-mask-image: url('../images/making-masthead-2.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: 62.5vw;
+    mask-position: center;
+    -webkit-mask-size: contain;
+}
+.bigtext-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #d2e764; /* Warna latar seperti di gambar */
+    padding: 50px 0;
+    position: relative;
+    margin-top: 64px;
+  }
+  
+  .marquee-wrapper {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+  }
+  
+  .bigtext-marquee span {
+    font-size: 120px;
+    font-weight: 600;
+    padding-right: 16px;
+  }
+  .bigtext-marquee span:nth-child(odd){
+    opacity: 30%;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+.enrollmentpage{
+    margin-top: 72px;
+    counter-reset: journey-counter;
+}
+
+.content-journey{
+    max-height: max-content;
+    overflow: hidden;
+}
+
+.enrollmentpage .journey-card {
+    position: relative;
+    counter-increment: journey-counter; /* Tambah 1 setiap card */
+    /* transition: all .3s ease-in-out; */
+  }
+
+  .enrollmentpage .journey-card::before {
+    content: counter(journey-counter);
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    /* transform: translateY(-50%); */
+    
+    /* Styling angka */
+    background-color: #006391;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+.journey-card ul{
+    padding-left: 24px;
+}
+.journey-card ul li{
+    position: relative;
+}
+.journey-card ul li:not(:last-child){
+    margin-bottom: 4px;
+}
+.journey-card ul li::before{
+    content: "";
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #006391;
+    position: absolute;
+    top: 8px;
+    left: -16px;
+}
+
+
 @media only screen and (max-width: 1000px) {
     .header-logo{
         width: calc(4/12 * 100%);
@@ -677,5 +1015,16 @@ canvas{
     }
     .enrollment-section.poped{
         padding-bottom: 90px;
+    }
+    .enrollmentpage .journey-card::before{
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        margin-bottom: 24px;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        display: none;
     }
 }
