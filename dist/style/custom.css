@@ -917,6 +917,18 @@ canvas{
         background-attachment: unset;
         /* background-size: auto; */
     }
+
+    .enrollmentpage>section.bg-fixed{
+        padding-bottom: 80px;
+    }
+    #content-journey .buttons{
+        position: relative;
+        margin-top: 40px;
+    }
+    .pin-spacer + .cloud-aksen{
+        bottom: 40px;
+        right: -30px;
+    }
 }
 /* Responsive */
 @media only screen and (max-width: 500px) {
@@ -996,6 +1008,7 @@ canvas{
     .box-form .step h2{
         font-size: 20px;
     }
+    
     .enrollment-section .cloud-aksen{
         width: 150px;
         height: 150px;
@@ -1026,5 +1039,8 @@ canvas{
         height: 32px;
         line-height: 32px;
         display: none;
+    }
+    .pin-spacer + .cloud-aksen{
+        bottom: 40px;
     }
 }
