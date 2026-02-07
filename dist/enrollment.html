@@ -19,232 +19,368 @@
         <a href="index.html" class="header-logo w-2/12">
           <img src="images/almacita-logo.svg" alt="logo" class="h-[40px]">
         </a>
-        <div class="header-right flex flex-1 align-middle justify-end w-2/3">
-          <nav class="nav items-center justify-content-center text-primary font-medium flex gap-4">
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled hidden" href="#">Program</a>
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled hidden" href="#">About</a>
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled hidden" href="#">Curriculum</a>
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled hidden" href="#">Facilities</a>
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled hidden" href="#">Activities</a>
+        <div class="header-right hidden lg:flex flex-1 align-middle justify-end w-2/3 ">
+          <nav class="nav items-center justify-content-center text-primary font-medium lg:flex gap-4">
+            <a class="nav-link hover:opacity-75 transition duration-300" href="about.html">About</a>
             <a class="nav-link hover:opacity-75 transition duration-300 disabled" href="kindergarten.html">Kindergarten</a>
-            <a class="nav-link hover:opacity-75 transition duration-300 disabled" href="almacita.html">Elementary</a>
+            <a class="nav-link hover:opacity-75 transition duration-300 disabled" href="elementary.html">Elementary</a>
+            <a class="nav-link hover:opacity-75 transition duration-300" href="facilities.html">Facilities</a>
+            <!-- <a class="nav-link hover:opacity-75 transition duration-300" href="#">Program</a>
+            <a class="nav-link hover:opacity-75 transition duration-300" href="#">Curriculum</a> -->
+            <!-- <a class="nav-link hover:opacity-75 transition duration-300" href="#">Activities</a> -->
+            <a class="nav-link hover:opacity-75 transition duration-300" href="contact.html">Contact</a>
             <!-- <a class="nav-link hover:opacity-75 hover:cursor-pointer transition duration-300 enrollclick">Enrollment</a> -->
             <a class="nav-link hover:opacity-75 hover:cursor-pointer transition duration-300 enrollclick" href="enrollment.html">Enrollment</a>
           </nav>
         </div>
       </div>
-      <div class="burger mobile-menu hidden cursor-pointer fixed top-10 right-12">
-        <span class="block w-[27px] h-[2px] mb-2 bg-white"></span>
-        <span class="block w-[27px] h-[2px] bg-white"></span>
+      <div class="burger mobile-menu lg:hidden cursor-pointer fixed top-[30px] right-5">
+        <span class="block w-[27px] h-[2px] mb-2 bg-[#A5CC1F]"></span>
+        <span class="block w-[27px] h-[2px] bg-[#A5CC1F]"></span>
       </div>
-
     </div>
   </header>
   <main class="enrollmentpage mt-[64px] bg-[#F4FDFF]" >
     <section class="lg:pt-[120px] lg:pb-[240px] md:py-[90px] py-[60px] bg-[url(../images/s3-aksen.svg)] bg-[110%_120%] bg-no-repeat bg-fixed">
       <div class="lg:flex-7/12 lg:max-w-7/12 md:flex-10/12 md:max-w-10/12 mx-auto mb-12">
         <h1 class="text-primary font-sora lg:text-[80px] md:text-[52px] text-[32px] leading-[1.1] tracking-[0.05rem] text-center lg:max-w-[860px] mx-auto mb-4">Enrollment Information</h1>
-        <p class="text-primary text-lg leading-[1.5] lg:max-w-[644px] mx-auto text-center">We are excited to welcome your family to Almacita School community! We offer a rolling admissions process, accepting applications throughout the year. However, spaces are limited, so we can encourage you to apply early!</p>
+        <!-- <p class="text-primary text-lg leading-[1.5] lg:max-w-[644px] mx-auto text-center">We are excited to welcome your family to Almacita School community! We offer a rolling admissions process, accepting applications throughout the year. However, spaces are limited, so we can encourage you to apply early!</p> -->
       </div>
 
       <!-- Tabs -->
       <div class="container mx-auto px-5">
-        <div class="flex gap-2 justify-center">
-        <a id="tab-journey" class="font-sora bg-primary md:text-2xl tracking-[-0.05rem] font-semibold py-2 md:px-6 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white  hover:cursor-pointer" onclick="showTab('journey')">
-          Enrollment journey
+        <div class="flex gap-2 justify-center tabs">
+        <a id="tab-nursery" class="tab-journey font-sora bg-[#7FC0EC] border-1 border-[#7FC0EC] md:text-2xl tracking-[-0.05rem] font-semibold py-2 md:px-6 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white hover:cursor-pointer hover:bg-[#7FC0EC] opacity-100" onclick="showTab('nursery')">
+          Nursery
         </a>
-        <a id="tab-form" class="font-sora font-semibold md:text-2xl tracking-[-0.05rem] bg-[#F4FDFF] py-2 md:px-6 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-primary border-1 border-[#00639140] hover:cursor-pointer" onclick="showTab('form')">
-          Enrollment form
+        <a id="tab-kinder" class="tab-journey font-sora bg-[#F4FDFF] md:text-2xl tracking-[-0.05rem] font-semibold py-2 md:px-6 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-[#006391] opacity-50 hover:cursor-pointer border-1 border-[#00639140] hover:bg-[#7FC0EC]" onclick="showTab('kinder')">
+          Kinder
         </a>
+        <a id="tab-elementary" class="tab-journey font-sora bg-[#F4FDFF] md:text-2xl tracking-[-0.05rem] font-semibold py-2 md:px-6 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-[#006391] opacity-50 hover:cursor-pointer border-1 border-[#00639140] hover:bg-[#7FC0EC]" onclick="showTab('elementary')">
+          Elementary
+        </a>
+        <div class="btj hidden buttons max-w-[235px] center z-10">
+          <img src="images/imagesarrow-round-white.svg" alt="img" class="w-10 h-10">
+          <a href="javascript:void(0);" class="bg-white py-2 px-4 text-center rounded-[50px] border-1 border-primary group hover:bg-blend-lighten font-medium"><span class="text-primary">back to Journey</span></a>
+          <img src="images/imagesarrow-round-white.svg" alt="img" class="w-10 h-10">
+        </div>
         </div>
       </div>
       
-      <div class="container max-w-full lg:max-w-[872px] w-10/12 mx-auto lg:pt-[120px] md:pt-[90px] pt-[64px]">
+      <div class="container max-w-full lg:max-w-[872px] w-10/12 mx-auto lg:pt-[80px] md:pt-[64px] pt-[40px]">
         <!-- journey Content -->
-        <div class=" md:mt[90px] relative">
-          <!-- Event Tab -->
-          <div id="content-journey" class="tab-content relative">
-            <div class="cloud-aksen absolute -top-20 -left-20 z-30 md:max-w-[155px] max-w-[120px]">
-              <img src="images/cloud-aksen.svg" alt="" class="object-contain">
-            </div>
-            <div class="journey-wraps">
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Schedule School Visit</b>
-                  <p>We highly recommend scheduling a visit to our school to experience the Almacita environment firsthand. During the visit, you will have the opportunity to meet our teachers, tour our facilities, and learn more about our programs.</p>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Registration Payment</b>
-                  <p>You’ll receive an admission fee invoice in which you are required to make a payment withing 3 (three) days</p>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Submit Application</b>
-                  <p>Complete the online application form and submit it along with the required documents, including:</p>
-                  <ul>
-                    <li>Child’s birth certificate</li>
-                    <li>Parent/guardian identification</li>
-                    <li>Recent passport-sized photos.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Student Observation</b>
-                  <p>There will be a preliminary assessment conducted to determine the student’s readiness for the program.</p>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Interview</b>
-                  <p>You will be invited to attend an interview session with the principal to discuss the students’ learning needs and how Almacita can support their development.</p>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Student Acceptance</b>
-                  <p>You will receive an acceptance notification sent to your email notifying whether the admission process has been successful or not.</p>
-                </div>
-              </div>
-              <div class="journey-card bg-white md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#006391] text-primary mb-4">
-                <div class="text">
-                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Letter of Offer</b>
-                  <p>If the admission process is successful, you will receive a letter of offer, including the fee structure and payment schedule. Failure to meet the payment deadlines as outlined in the letter may result in the withdrawal of the offer of admission.</p>
-                </div>
-              </div>
-            </div>
-            <div class="cloud-aksen absolute md:-bottom-20 -bottom-10 md:-right-20 -right-3.5 z-30 md:max-w-[155px] max-w-[120px]">
-              <img src="images/cloud-aksen.svg" alt="" class="object-contain">
-            </div>
-
-            <div class="buttons max-w-[330px] flex center bookvisit z-10 absolute left-0 right-0 mx-auto lg:-bottom-[120px]">
-              <img src="images/arrow-round-primary.svg" alt="img" class="w-10 h-10">
-              <a href="#" class="bg-primary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten"><span class="text-white">Book a visit </span><span class="text-white opacity-50 group-hover:opacity-100 transition duration-300"> - get your seat</span></a>
-              <img src="images/arrow-round-primary.svg" alt="img" class="w-10 h-10">
-            </div>   
-                
+        <div class="enrollment-journey md:mt[90px] relative">
+          <div class="cloud-aksen absolute -top-12 md:-top-20 -right-6 md:-right-20 z-30 md:max-w-[155px] max-w-[120px]">
+            <img src="images/cloud-aksen.svg" alt="" class="object-contain">
           </div>
-      
-          <!-- form Tab -->
-          <div id="content-form" class="tab-content hidden enrollment-section">
-            <div class="mx-auto">
-              <!-- <h2 class="text-primary font-sora lg:text-[60px] md:text-[44px] text-[32px] leading-[1.1] tracking-[0.05rem] text-center lg:max-w-[580px] mx-auto mb-4">Book a Visit</h2> -->
-              <p class="text-primary text-lg leading-[1.5] lg:max-w-[580px] mx-auto text-center">Our admission and education team will share about 
-                our school’s facilities and programs.</p>
-              <div class="box-form mt-12 w-full lg:max-w-[644px] mx-auto">
-                <form onsubmit="return prosesForm(event)" class="relative" >
-                  <div class="cloud-aksen absolute -top-20 -left-20 z-30 max-w-[155px]">
-                    <img src="images/cloud-aksen.svg" alt="" class="object-contain">
-                  </div>
-                  <div class="step step-one">
-                    <h2 class="text-primary font-sora font-semibold md:text-2xl text-xl leading-[1.1] tracking-[0.05rem] lg:max-w-[580px] mx-auto mb-4">Personal Information <span class="font-normal">(1/2)</span></h2>
-                    <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Parent’s First Name</label>
-                        <div class="mt-2">
-                          <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter parent’s name here" required>
-                        </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Child’s Complete Name</label>
-                        <div class="mt-2">
-                          <input type="text" name="last-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s complete name here" required>
-                        </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Child’s Date of Birth:</label>
-                          <div class="mt-2">
-                            <input type="date" name="dob" id="dob" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
-                          </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Preferred Program</label>
-                        <div class="mt-2 grid md:grid-cols-3 grid-cols-2 gap-2">
-                          <label class="block">
-                              <input type="radio" name="time" value="Nursery" class="hidden peer" required>
-                              <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Nursery</div>
-                          </label>
-                          <label class="block">
-                              <input type="radio" name="time" value="Kindy" class="hidden peer" required>
-                              <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Kindy</div>
-                          </label>
-                          <label class="block">
-                              <input type="radio" name="time" value="Elementary" class="hidden peer" required>
-                              <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Elementary</div>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Domicile</label>
-                        <div class="mt-2">
-                          <input type="text" name="domicile" id="domicile" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter domicile here" required>
-                        </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Email</label>
-                        <div class="mt-2">
-                          <input type="email" name="email" id="email" autocomplete="emailx" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter email address here" required>
-                        </div>
-                      </div>
-                      <div class="col-span-full">
-                        <label for="paren-f-name">Contact Number</label>
-                        <div class="mt-2">
-                          <input type="text" name="contact_number" id="contact_number" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter contact number here" required>
-                        </div>
-                      </div>
-                      <div class="col-span-full text-right mt-10">
-                        <a href="javascript:void(0)" class="form-next bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white">Next</a>
+          <div class="cloud-aksen absolute bottom-[110px] md:bottom-8 md:-left-11 -left-3.5 z-30 md:max-w-[155px] max-w-[120px]">
+            <img src="images/cloud-aksen.svg" alt="" class="object-contain">
+          </div> 
+          <!-- Nursey Tab -->
+          <div id="content-nursery" class="tab-content relative">
+            <div class="jrny-wrap">
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-[#006391] mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">School Visit</b>
+                  <p><b>Discover Our World</b>. Schedule a tour to experience our vibrant learning environment and see our philosophy in action.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Admission Fee</b>
+                  <p><b>Secure the Spot</b>. Settle the initial admission fee to officially move forward with your child's application process.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Submit Enrollment Form</b>
+                  <p><b>Complete the Details</b>. Provide us with the necessary documents and information to help us get to know your child better.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Tuition Fee</b>
+                  <p><b>Finalize Administration</b>. You will receive an official invoice for the tuition fee. Once settled, the administrative process is complete.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Enroll</b>
+                  <p><b>Start the Journey</b>. Welcome to the Almacita family! Your child is now officially enrolled and ready to flourish.</p>
+                </div>
+              </div>
+            </div> 
+          </div>
+
+          <!-- Kinder Tab -->
+          <div id="content-kinder" class="tab-content hidden relative">
+            <div class="jrny-wrap lg:min-h-[50vh]">
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-[#006391] mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">School Visit</b>
+                  <p><b>Discover Our World</b>. Schedule a tour to experience our vibrant learning environment and see our philosophy in action.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Admission Fee</b>
+                  <p><b>Secure the Spot</b>. Settle the initial admission fee to officially move forward with your child's application process.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Submit Enrollment Form</b>
+                  <p><b>Complete the Details</b>. Provide us with the necessary documents and information to help us get to know your child better.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Trial</b>
+                  <p><b>Experience the Classroom</b>. Let your child spend a day with us to immerse themselves in our joyful and meaningful learning activities.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Observation & Parents Interview</b>
+                  <p><b>Deepening the Connection</b>. We will observe your child’s interactions while chatting with you to align our shared goals for their growth.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Acceptance Letter</b>
+                  <p><b>The Official Welcome</b>. Receive your formal acceptance notification, marking the beginning of your family’s journey with Almacita.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Invoice</b>
+                  <p><b>Finalize Registration</b>. You will receive a tuition fee invoice to complete the administrative phase of the enrollment.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Uniform Fitting</b>
+                  <p><b>Ready for Adventure</b>. Visit us for a uniform fitting to ensure your little learner is comfortable and prepared for their first day.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Enroll</b>
+                  <p><b>Start the Journey</b>. Welcome to the Almacita family! Your child is now officially enrolled and ready to flourish.</p>
+                </div>
+              </div>
+            </div>       
+          </div>
+
+          <!-- Elementary Tab -->
+          <div id="content-elementary" class="tab-content hidden relative">
+            <div class="jrny-wrap lg:min-h-[50vh]">
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-[#006391] mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">School Visit</b>
+                  <p><b>Discover Our World</b>. Schedule a tour to experience our vibrant learning environment and see our philosophy in action.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Admission Fee</b>
+                  <p><b>Secure the Spot</b>. Settle the initial admission fee to officially move forward with your child's application process.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Submit Enrollment Form</b>
+                  <p><b>Complete the Details</b>. Provide us with the necessary documents and information to help us get to know your child better.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Teacher Observation</b>
+                  <p><b>Assessing Potential</b>. A focused session where our educators interact with your child to understand their academic foundation and unique learning style.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Observation & Parents Interview</b>
+                  <p><b>Deepening the Connection</b>. We will observe your child’s interactions while chatting with you to align our shared goals for their growth.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Acceptance Letter</b>
+                  <p><b>The Official Welcome</b>. Receive your formal acceptance notification, marking the beginning of your family’s journey with Almacita.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Invoice</b>
+                  <p><b>Finalize Registration</b>. You will receive a tuition fee invoice to complete the administrative phase of the enrollment.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Uniform Fitting</b>
+                  <p><b>Ready for Adventure</b>. Visit us for a uniform fitting to ensure your little learner is comfortable and prepared for their first day.</p>
+                </div>
+              </div>
+              <div class="jrny-card md:p-10 md:pl-[104px] p-6 pl-6 rounded-xl border-1 border-[#00639140] text-primary mb-6">
+                <span class="aksnlist absolute top-0 left-0"></span>
+                <div class="text">
+                  <b class="font-sora font-semibold text-2xl tracking-[-0.05rem] leading-[1.1] mb-2 block">Enroll</b>
+                  <p><b>Start the Journey</b>. Welcome to the Almacita family! Your child is now officially enrolled and ready to flourish.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons-wrap flex flex-col md:flex-row justify-center items-center gap-4 relative mt-12">
+            <div class="buttons max-w-[233px] flex center z-10 enrollswipe">
+              <img src="images/arrow-round-primary.svg" alt="img" class="w-10 h-10">
+              <a href="javascript:void(0);" class="bg-primary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten"><span class="text-white">Request School Fee </span></a>
+              <img src="images/arrow-round-primary.svg" alt="img" class="w-10 h-10">
+            </div> 
+            <div class="buttons max-w-[235px] flex center z-10">
+              <img src="images/arrow-round-secondary.svg" alt="img" class="w-10 h-10">
+              <a href="#" class="bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten"><span class="text-white">Admission WhatsApp</span></a>
+              <img src="images/arrow-round-secondary.svg" alt="img" class="w-10 h-10">
+            </div>
+          </div>
+        </div>
+        <!-- Enrollment Form -->
+        <div id="content-form" class="hidden enrollment-section-form">
+          <div class="mx-auto">
+            <div class="box-form w-full lg:max-w-[644px] mx-auto">
+              <form onsubmit="return prosesForm(event)" class="relative" >
+                <div class="cloud-aksen absolute -top-20 -left-20 z-30 max-w-[155px]">
+                  <img src="images/cloud-aksen.svg" alt="" class="object-contain">
+                </div>
+                <div class="step step-one">
+                  <h2 class="text-primary font-sora font-semibold md:text-2xl text-xl leading-[1.1] tracking-[0.05rem] lg:max-w-[580px] mx-auto mb-4">Personal Information <span class="font-normal">(1/2)</span></h2>
+                  <div class="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-6">
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Parent’s First Name</label>
+                      <div class="mt-2">
+                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter parent’s name here" required>
                       </div>
                     </div>
-                  </div>
-                  <div class="step step-two flex flex-col">
-                    <h2 class="text-primary font-sora font-semibold md:text-2xl text-xl leading-[1.1] tracking-[0.05rem] lg:max-w-[580px] mx-auto mb-4 w-full">Booking Information<span class="font-normal">(2/2)</span></h2>
-                    <div class="col-span-full mb-4">
-                      <label for="paren-f-name">Date of Visit</label>
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Child’s Complete Name</label>
+                      <div class="mt-2">
+                        <input type="text" name="last-name" id="last-name" autocomplete="given-name" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter child’s complete name here" required>
+                      </div>
+                    </div>
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Child’s Date of Birth:</label>
                         <div class="mt-2">
-                          <input type="date" name="phone_number" id="date" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
-                          <small class="text-primary mt-2 opacity-70">The school tour is available on weekdays, Monday - Friday 08:00 to 15:00. Visit by appointment.</small>
+                          <input type="date" name="dob" id="dob" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
                         </div>
                     </div>
                     <div class="col-span-full">
-                      <label for="paren-f-name">How did you hear about Almacita?</label>
-                      <div class="flex flex-wrap gap-2 mt-2">
-                        <label>
-                            <input type="checkbox" name="source" value="Google search" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Google search</div>
+                      <label for="paren-f-name">Preferred Program</label>
+                      <div class="mt-2 grid md:grid-cols-3 grid-cols-2 gap-2">
+                        <label class="block">
+                            <input type="radio" name="time" value="Nursery" class="hidden peer" required>
+                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Nursery</div>
                         </label>
-                        <label>
-                            <input type="checkbox" name="source" value="Word of mouth" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Word of mouth</div>
+                        <label class="block">
+                            <input type="radio" name="time" value="Kindy" class="hidden peer" required>
+                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Kindy</div>
                         </label>
-                        <label>
-                            <input type="checkbox" name="source" value="Instagram" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Instagram</div>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="source" value="Email" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Email</div>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="source" value="Marketing Booth" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Marketing Booth</div>
-                        </label>
-                        <label>
-                            <input type="checkbox" name="source" value="Other" class="hidden peer">
-                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Other</div>
+                        <label class="block">
+                            <input type="radio" name="time" value="Elementary" class="hidden peer" required>
+                            <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] rounded-lg text-center cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white">Elementary</div>
                         </label>
                       </div>
                     </div>
-                    <div class="col-span-full text-right mt-auto">
-                      <a href="javascript:void(0)" class="form-back bg-white py-2 px-4 rounded-[50px] group hover:bg-blend-lighten text-secondary border border-secondary ">Back</a>
-                      <button type="submit" class="bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white hover:cursor-pointer">Submit Booking</button>
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Domicile</label>
+                      <div class="mt-2">
+                        <input type="text" name="domicile" id="domicile" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter domicile here" required>
+                      </div>
+                    </div>
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Email</label>
+                      <div class="mt-2">
+                        <input type="email" name="email" id="email" autocomplete="emailx" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter email address here" required>
+                      </div>
+                    </div>
+                    <div class="col-span-full">
+                      <label for="paren-f-name">Contact Number</label>
+                      <div class="mt-2">
+                        <input type="text" name="contact_number" id="contact_number" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Enter contact number here" required>
+                      </div>
+                    </div>
+                    <div class="col-span-full text-right mt-10">
+                      <a href="javascript:void(0)" class="form-next bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white">Next</a>
                     </div>
                   </div>
-                </form>
-              </div>
+                </div>
+                <div class="step step-two flex flex-col">
+                  <h2 class="text-primary font-sora font-semibold md:text-2xl text-xl leading-[1.1] tracking-[0.05rem] lg:max-w-[580px] mx-auto mb-4 w-full">Booking Information<span class="font-normal">(2/2)</span></h2>
+                  <div class="col-span-full mb-4">
+                    <label for="paren-f-name">Date of Visit</label>
+                      <div class="mt-2">
+                        <input type="date" name="phone_number" id="date" autocomplete="datex" class="form-control focus:outline-1 focus:-outline-offset-1 focus:outline-primary" placeholder="Select date" required>
+                        <small class="text-primary mt-2 opacity-70">The school tour is available on weekdays, Monday - Friday 08:00 to 15:00. Visit by appointment.</small>
+                      </div>
+                  </div>
+                  <div class="col-span-full">
+                    <label for="paren-f-name">How did you hear about Almacita?</label>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                      <label>
+                          <input type="checkbox" name="source" value="Google search" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Google search</div>
+                      </label>
+                      <label>
+                          <input type="checkbox" name="source" value="Word of mouth" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Word of mouth</div>
+                      </label>
+                      <label>
+                          <input type="checkbox" name="source" value="Instagram" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Instagram</div>
+                      </label>
+                      <label>
+                          <input type="checkbox" name="source" value="Email" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Email</div>
+                      </label>
+                      <label>
+                          <input type="checkbox" name="source" value="Marketing Booth" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Marketing Booth</div>
+                      </label>
+                      <label>
+                          <input type="checkbox" name="source" value="Other" class="hidden peer">
+                          <div class="text-base font-medium tracking-[-0.05rem] px-4 py-2 border-1 border-[#00639126] leading-[1] rounded-lg cursor-pointer peer-checked:border-[#469EE0] peer-checked:bg-[#469EE0] peer-checked:text-white shadow-xs">Other</div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-span-full text-right mt-auto">
+                    <a href="javascript:void(0)" class="form-back bg-white py-2 px-4 rounded-[50px] group hover:bg-blend-lighten text-secondary border border-secondary ">Back</a>
+                    <button type="submit" class="bg-secondary py-2 px-4 text-center rounded-[50px] group hover:bg-blend-lighten text-white hover:cursor-pointer">Submit Booking</button>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -254,41 +390,18 @@
       <!-- Tailwind Tab Toggle Script -->
       <script>
           function showTab(tab) {
-          const tabs = ['journey', 'form'];
+          const tabs = ['nursery', 'kinder', 'elementary'];
           tabs.forEach(t => {
               document.getElementById('content-' + t).classList.add('hidden');
-              document.getElementById('tab-' + t).classList.remove('text-white', 'bg-primary');
-              document.getElementById('tab-' + t).classList.add('bg-[#F4FDFF]','text-primary', 'border-1', 'border-[#00639140]');
+              document.getElementById('tab-' + t).classList.remove('text-white', 'bg-[#7FC0EC]','opacity-100', 'bg-[#F4FDFF]', 'border-[#7FC0EC]');
+              document.getElementById('tab-' + t).classList.add('text-[#006391]', 'border-1', 'border-[#00639140]','opacity-50');
           });
       
           document.getElementById('content-' + tab).classList.remove('hidden');
-          document.getElementById('tab-' + tab).classList.add('active','bg-primary', 'text-white');
+          document.getElementById('tab-' + tab).classList.add('active','bg-[#7FC0EC]', 'text-white', 'opacity-100');
           }
           var bookVisitElements = document.querySelectorAll('.bookvisit');
           var tabForm = document.getElementById('tab-form');
-
-          if (tabForm && bookVisitElements.length > 0) {
-            bookVisitElements.forEach(function(el) {
-              el.addEventListener('click', function(e) {
-                e.preventDefault();
-
-                // Trigger pindah tab
-                tabForm.click();
-
-                // Delay untuk memastikan tab sudah aktif dan konten muncul
-                setTimeout(function() {
-                  var formSection = document.getElementById('tab-form');
-                  if (formSection) {
-                    var offset = formSection.getBoundingClientRect().top + window.scrollY - 120;
-                    window.scrollTo({
-                      top: offset,
-                      behavior: 'smooth'
-                    });
-                  }
-                }, 200); // bisa disesuaikan sesuai animasi/tab
-              });
-            });
-          }
 
       </script>
 

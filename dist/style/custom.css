@@ -8,7 +8,8 @@ html {
     }
   } */
 main{
-    margin-top: 88px;
+    /* margin-top: 88px; */
+    margin-top: 73px;
 }
 h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 .header{
@@ -354,7 +355,7 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 .curi-list li:nth-child(4)::before{
     background-image: url(../images/curi-icon-4.svg);
 }
-.cus-list li:not(:last-child){
+.cus-list > li:not(:last-child){
     margin-bottom: 24px;
 }
 .cus-list b{
@@ -366,7 +367,7 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     letter-spacing: -0.05em;
     margin-bottom: 8px;
 }
-.cus-list address, .cus-list a{
+.cus-list address, .cus-list a, .cus-list p, .cus-list span{
     text-decoration: none;
     font-style: normal;
     color: #006391;
@@ -374,6 +375,9 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     font-size: 16px;
     line-height: 150%;
     letter-spacing: -0.02em;
+}
+dl.cus-list b{
+    margin-bottom: 0;
 }
 .section-eight.sticky{
     position: sticky;
@@ -647,6 +651,61 @@ body.enroll-show{
     z-index: 99999;
 }
 
+
+
+
+.jrny-wrap .jrny-card{
+    margin-left: 50px;
+}
+.jrny-wrap .jrny-card:nth-child(3n + 1) { background: #D7EBF9; } /* 1 */
+.jrny-wrap .jrny-card:nth-child(3n + 2) { background: #E8F4B9; } /* 2 */
+.jrny-wrap .jrny-card:nth-child(3n + 3) { background: #F0E9F1; } /* 3 */
+.jrny-wrap .jrny-card:nth-child(3n + 4) { background: #E8F4B9; } /* 4 */
+.jrny-wrap .jrny-card:nth-child(3n + 5) { background: #D7EBF9; } /* 5 */
+
+
+@media only screen and (max-width: 1000px) {
+    .jrny-wrap .jrny-card{
+        margin-left: 50px;
+    }
+}
+.jrny-wrap .jrny-card .aksnlist::before{
+    content: "";
+    width: 1px;
+    height: 110%;
+    position: absolute;
+    background-color: #A5CC1F;
+    top: 12px;
+    left: 9px;
+}
+.jrny-wrap .jrny-card:last-child .aksnlist::before{
+    display: none;
+}
+.jrny-wrap .jrny-card .aksnlist{
+    content: "";
+    width: 20px;
+    height: 100%;
+    background-image: url(../images/timeline-ic-list.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 8px;
+    left: -70px;
+    
+}
+.enrollment-journey,
+.enrollmentpage .tabs{
+    /* transition: all .3s ease-in-out; */
+}
+.enrollmentpage.form-view{
+    .enrollment-journey,
+    .tabs .tab-journey{
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+}
+
 /* Modal */
 .modal-notif{
     opacity: 0;
@@ -696,11 +755,13 @@ canvas{
     z-index: 3;
 }
 
-.program-wrapp:not(:last-child){
+.program-wrapp:not(:last-child),
+.team-wrapp:not(:last-child){
     margin-bottom: 64px;
 }
 
-.program-card .thumbnail{
+.program-card .thumbnail,
+.team-card .thumbnail{
     border: 8px solid #FFF;
     position: relative;
     width: 100%;
@@ -708,13 +769,16 @@ canvas{
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
     transition: all .3s ease-in-out;
 }
-.program-card:hover{
+.program-card:hover,
+.team-card:hover{
     cursor: pointer;
 }
-.program-card:hover .thumbnail{
+.program-card:hover .thumbnail,
+.team-card:hover{
     transform: rotate(3deg);
 }
-.program-card .thumbnail img{
+.program-card .thumbnail img,
+.team-card .thumbnail img{
     position: absolute;
     top: 0;
     left: 0;
@@ -722,6 +786,36 @@ canvas{
     height: 100%;
     object-fit: cover;
 }
+
+.team-card{
+    background: #FFF;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.16);
+    padding-bottom: 24px;
+    transition: all .3s ease-in-out;
+}
+.team-card:nth-child(n + 1) {
+    transform: rotate(-3deg) translateY(6px) translateX(10px);
+    z-index: 1;
+  }
+  
+  .team-card:nth-child(n + 2) {
+    transform: rotate(0deg);
+    z-index: 3;
+  }
+  
+  .team-card:nth-child(n + 3) {
+    transform: rotate(3deg) translateY(6px) translateX(-10px);
+    z-index: 1;
+}
+
+.team-card:hover{
+    transform: rotate(0) translate(0,0);
+}
+
+.team-card .thumbnail{
+    box-shadow: none;
+}
+
 .kindergartenpage{
     margin-top: 0;
 }
@@ -823,13 +917,15 @@ canvas{
     overflow: hidden;
 }
 
-.enrollmentpage .journey-card {
+.enrollmentpage .journey-card,
+.enrollmentpage .jrny-card {
     position: relative;
     counter-increment: journey-counter; /* Tambah 1 setiap card */
     /* transition: all .3s ease-in-out; */
   }
 
-  .enrollmentpage .journey-card::before {
+  .enrollmentpage .journey-card::before,
+  .enrollmentpage .jrny-card::before {
     content: counter(journey-counter);
     position: absolute;
     left: 40px;
@@ -868,6 +964,26 @@ canvas{
     left: -16px;
 }
 
+
+
+.facility-gallery .fg-item:nth-child(even) .fg-card{
+    right: inherit;
+    left: 56px;
+}
+
+canvas{
+    background: transparent !important;
+}
+#sectionCanvas,
+#footerCanvas{
+    position: relative;
+    overflow: hidden;
+}
+#footerCanvas canvas,
+#sectionCanvas canvas {
+    inset: 0;
+    display: block;
+}
 
 @media only screen and (max-width: 1000px) {
     .header-logo{
@@ -929,6 +1045,65 @@ canvas{
         bottom: 40px;
         right: -30px;
     }
+    .team-card{
+        transform: rotate(0) translate(0, 0) !important;
+    }
+    .header .header-right{
+        display: block;
+        background-color: #FFF;
+        position: fixed;
+        top: 73px;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        transition: all .3s ease-in-out;
+        visibility: hidden;
+    }
+    .header .nav-link{
+        display: block;
+    }
+    .header .nav-link:not(:last-child){
+        margin-bottom: 20px;
+    }
+    .mm-open .header{
+        background-color: #FFF;
+    }
+    .mm-open .header .mobile-menu{
+        z-index: 99999;
+    }
+    .mm-open .header .mobile-menu span{
+        transition: all .3s ease-in-out;
+    }
+    .mm-open .header .mobile-menu span:nth-child(1){
+        transform: rotate(45deg);
+    }
+    .mm-open .header .mobile-menu span:nth-child(2){
+        transform: rotate(-45deg) translate(6px, -8px);
+    }
+    .mm-open .header .header-right{
+        visibility: visible;
+        transform: translateX(-100%);
+        z-index: 99999;
+    }
+    .mm-open::after{
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        background-color: #000;
+        opacity: .2;
+        position: fixed;
+        top: 0;
+        left:0;
+        z-index: 998;
+    }
+
+    .jrny-card{
+        
+    }
+    
+    
+    
 }
 /* Responsive */
 @media only screen and (max-width: 500px) {
@@ -936,9 +1111,9 @@ canvas{
     .header-logo img{
         max-height: 40px;
     }
-    .header .nav-link:not(.enrollclick){
+    /* .header .nav-link:not(.enrollclick){
         display: none;
-    }
+    } */
     .section-two .container{
         height: 100vh;
     }
@@ -1042,5 +1217,27 @@ canvas{
     }
     .pin-spacer + .cloud-aksen{
         bottom: 40px;
+    }
+    .facility-gallery .fg-item .fg-card{
+        position: absolute;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 20px;
+        width: 100%;
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 20px;;
+    }
+    .jrny-wrap .jrny-card{
+        margin-left: 40px;
+    }
+    .jrny-wrap .jrny-card .aksnlist{
+        left: -50px;
+    }
+    .jrny-wrap .jrny-card .aksnlist::before{
+        /* left: 30px; */
+    }
+    .jrny-card::before{
+        display: none;
     }
 }

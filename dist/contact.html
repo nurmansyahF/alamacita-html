@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="images/almacita-logo.svg">
+  <title>Almacita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap">
+  <link href="./style/main.css?v=20" rel="stylesheet">
+  <link href="./style/custom.css?v=20" rel="stylesheet">
+</head>
+<body class="font-mona">
+  <header class="header pt-4 pb-4 w-full z-[999]">
+    <div class="container mx-auto px-[20px]">
+      <div class="flex w-full justify-between items-center">
+        <a href="index.html" class="header-logo w-2/12">
+          <img src="images/almacita-logo.svg" alt="logo" class="h-[40px]">
+        </a>
+        <div class="header-right hidden lg:flex flex-1 align-middle justify-end w-2/3 ">
+          <nav class="nav items-center justify-content-center text-primary font-medium lg:flex gap-4">
+            <a class="nav-link hover:opacity-75 transition duration-300" href="about.html">About</a>
+            <a class="nav-link hover:opacity-75 transition duration-300 disabled" href="kindergarten.html">Kindergarten</a>
+            <a class="nav-link hover:opacity-75 transition duration-300 disabled" href="elementary.html">Elementary</a>
+            <a class="nav-link hover:opacity-75 transition duration-300" href="facilities.html">Facilities</a>
+            <!-- <a class="nav-link hover:opacity-75 transition duration-300" href="#">Program</a>
+            <a class="nav-link hover:opacity-75 transition duration-300" href="#">Curriculum</a> -->
+            <!-- <a class="nav-link hover:opacity-75 transition duration-300" href="#">Activities</a> -->
+            <a class="nav-link hover:opacity-75 transition duration-300" href="contact.html">Contact</a>
+            <!-- <a class="nav-link hover:opacity-75 hover:cursor-pointer transition duration-300 enrollclick">Enrollment</a> -->
+            <a class="nav-link hover:opacity-75 hover:cursor-pointer transition duration-300 enrollclick" href="enrollment.html">Enrollment</a>
+          </nav>
+        </div>
+      </div>
+      <div class="burger mobile-menu lg:hidden cursor-pointer fixed top-[30px] right-5">
+        <span class="block w-[27px] h-[2px] mb-2 bg-[#A5CC1F]"></span>
+        <span class="block w-[27px] h-[2px] bg-[#A5CC1F]"></span>
+      </div>
+    </div>
+  </header>
+  <main class="contactuspage mt-[64px]" >
+    <section class="lg:pt-[120px] lg:pb-[240px] md:py-[90px] py-[60px]">
+      <div class="container mx-auto px-6 lg:flex block justify-between">
+        <div class="lg:flex-6/12 lg:max-w-6/12 max-w-full">
+          <h1 class="text-primary font-sora lg:text-[80px] md:text-4xl text-[32px] leading-[1.1] tracking-[0.05rem] md:mb-10 mb-5">Contact Us</h1>
+          <p class="text-primary font-medium md:text-2xl leading-[1.5] lg:max-w-[660px] opacity-[0.7]">We would love to hear from you! Please feel free to reach out to us with any questions about our school, curriculum, or enrollment process.</p>
+        </div>
+      </div>
+      <div class="contactusgal my-[60px] md:my-[90px] lg:my-[120px]">
+        <img src="images/contactus-hero.jpg" alt="contact us hero" class="w-full object-cover">
+      </div>
+      <div class="container mx-auto px-6 lg:flex lg:flex-row-reverse block justify-between">
+        <div class="lg:flex-7/12 lg:max-w-7/12 max-w-full">
+          <dl class="cus-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[300px_1fr] gap-x-3 gap-y-4 text-sm">
+            <dt>
+              <b>Address</b>
+            </dt>
+            <dd>
+              <address>Jl. Rawas Dolar 65 Jatiranggon, Kec. Jatisampurna, Bekasi</address>
+            </dd>
+            <dt>
+              <b>Phone &amp; WhatsApp</b>
+            </dt>
+            <dd>
+              <a href="tel:085186058865" class="hover:text-emerald-600">
+                0851-8605-8865
+              </a>
+            </dd>
+            <dt>
+              <b>Email</b>
+            </dt>
+            <dd>
+              <a href="mailto:info.almacita@gmail.com" class="hover:text-emerald-600">
+                info.almacita@gmail.com
+              </a>
+            </dd>
+      
+            <dt>
+              <b>School Visit Hours</b>
+            </dt>
+            <dd class="space-y-2">
+              <p>
+                We welcome you to visit our school and see our facilities firsthand.
+                Please note our school visit hours:
+              </p>
+      
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 20" fill="none">
+                    <path d="M18.7791 15.9873L27.2565 7.53646C27.3843 7.40909 27.4825 7.24242 27.5413 7.06589C27.5511 7.03647 27.5609 7.00705 27.5707 6.97763C27.7029 6.47251 27.525 5.95224 27.1505 5.63774C27.1259 5.61318 27.0963 5.59352 27.0668 5.57385C27.0471 5.5542 27.0175 5.53453 26.9929 5.51978C23.0716 2.69836 18.1762 3.63838 14.6623 7.14118L13.9989 7.80254L13.3336 7.13933C9.805 3.62182 4.90696 2.66818 0.998456 5.48361C0.97387 5.49829 0.944369 5.51787 0.924711 5.53747C0.900139 5.56196 0.865707 5.57663 0.841135 5.60112C0.467554 5.91458 0.286187 6.42944 0.424698 6.93985C0.434582 6.96929 0.444466 6.99874 0.45435 7.02819C0.513652 7.20488 0.617228 7.36692 0.740447 7.49955L0.809441 7.56833L9.24158 15.974C11.8831 18.6072 16.1597 18.6083 18.7889 15.9873L18.7791 15.9873Z" fill="#006391"/>
+                    </svg>
+                  <span>Monday – Friday: 08.30 – 15.00</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 20" fill="none">
+                    <path d="M18.7791 15.9873L27.2565 7.53646C27.3843 7.40909 27.4825 7.24242 27.5413 7.06589C27.5511 7.03647 27.5609 7.00705 27.5707 6.97763C27.7029 6.47251 27.525 5.95224 27.1505 5.63774C27.1259 5.61318 27.0963 5.59352 27.0668 5.57385C27.0471 5.5542 27.0175 5.53453 26.9929 5.51978C23.0716 2.69836 18.1762 3.63838 14.6623 7.14118L13.9989 7.80254L13.3336 7.13933C9.805 3.62182 4.90696 2.66818 0.998456 5.48361C0.97387 5.49829 0.944369 5.51787 0.924711 5.53747C0.900139 5.56196 0.865707 5.57663 0.841135 5.60112C0.467554 5.91458 0.286187 6.42944 0.424698 6.93985C0.434582 6.96929 0.444466 6.99874 0.45435 7.02819C0.513652 7.20488 0.617228 7.36692 0.740447 7.49955L0.809441 7.56833L9.24158 15.974C11.8831 18.6072 16.1597 18.6083 18.7889 15.9873L18.7791 15.9873Z" fill="#006391"/>
+                    </svg>
+                  <span>Saturday: 08.30 – 13.00</span>
+                </li>
+              </ul>
+            </dd>
+            <dt>
+              <b>Follow Us on</b>
+            </dt>
+            <dd>
+              <span>Instagram:</span>
+              <a
+                href="https://instagram.com/almacita.sch"
+                target="_blank"
+                class=""
+              >
+                @almacita.sch
+              </a>
+            </dd>
+      
+          </dl>
+          <div class="copyright mt-20 text-[#006391] opacity-30">Almacita © 2025. All Rights Reserved.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div id="footerCanvas" 
+      data-texture='["./images/footer-shape-1.svg", "./images/footer-shape-2.svg", "./images/footer-shape-3.svg", "./images/footer-shape-4.svg", "./images/footer-shape-5.svg", "./images/footer-shape-6.svg"]'>
+    </div>
+  </footer>
+
+  <div class="relative z-50 modal-notif" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <!--
+      Background backdrop, show/hide based on modal state.
+  
+      Entering: "ease-out duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "ease-in duration-200"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="fixed inset-0 bg-[#F4FDFF] opacity-80 transition-opacity" aria-hidden="true"></div>
+  
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <!--
+          Modal panel, show/hide based on modal state.
+  
+          Entering: "ease-out duration-300"
+            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            To: "opacity-100 translate-y-0 sm:scale-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100 translate-y-0 sm:scale-100"
+            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        -->
+        <div class="relative transform overflow-hidden rounded-lgtext-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-[644px]">
+          <div class="bg-primary lg:p-10 sm:p-6 sm:pb-4 rounded-[12px]">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-center">
+                <h3 class="text-sora font-semibold text-white text-2xl" id="modal-title">Great Choice, Parents!</h3>
+                <div class="mt-2 mb-6">
+                  <p class="text-white text-lg">Are you sure you want to deactivate your account? All of your data will be permanently removed. This action cannot be undone.</p>
+                </div>
+                <div class="text-center">
+                  <a href="javascript:void(0)" class="close-modal-notif bg-white py-2 px-4 rounded-[50px] group hover:bg-blend-lighten text-secondary border border-secondary ">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script> 
+  <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="scripts/main.js?v=20"></script>
+</body>
+</html>

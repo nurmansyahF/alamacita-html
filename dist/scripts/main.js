@@ -79,7 +79,7 @@ $(document).ready(function() {
             // Jika scroll ke bawah, hapus class 'fixed'
             else if (scrollTop > lastScrollTop) {
                 header.removeClass('fix').addClass('sticky');
-                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0){
+                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0 || $('main.contactuspage').length > 0 || $('main.dinamicheader').length > 0) {
                     header.addClass('bg-white')
                 }
             }
@@ -87,6 +87,13 @@ $(document).ready(function() {
             lastScrollTop = scrollTop;
         });
         
+    })
+
+    $('.mobile-menu').each(function(){
+        var mm = $(this);
+        mm.on('click', function(){
+            $('body').toggleClass('mm-open');
+        })
     })
     
     // const $background = $(".section-two .bg");
@@ -777,7 +784,7 @@ function initMatterJS() {
             width: window.innerWidth,
             height: getCanvasHeight(),
             pixelRatio: 2,
-            background: '#FFF',
+            background: '#123',
             wireframes: false,
         }
     });
@@ -888,7 +895,328 @@ function initMatterJS() {
     //     createWorld();
     // });
 }
+// window.onload = initMatterJS;
 
-window.onload = initMatterJS;
+// New Matter JS
+// function initMatterCanvas(canvasId) {
+//     const container = document.getElementById(canvasId);
+//     if (!container) return;
+
+//     const Engine = Matter.Engine,
+//           Render = Matter.Render,
+//           MouseConstraint = Matter.MouseConstraint,
+//           Mouse = Matter.Mouse,
+//           World = Matter.World,
+//           Bodies = Matter.Bodies;
+
+//     const engine = Engine.create();
+//     const world = engine.world;
+
+//     function getCanvasHeight() {
+//         return window.innerWidth > 764 ? 300 : 200;
+//     }
+
+//     const render = Render.create({
+//         element: container,
+//         engine: engine,
+//         options: {
+//             width: window.innerWidth,
+//             height: getCanvasHeight(),
+//             pixelRatio: window.devicePixelRatio,
+//             // pixelRatio: 2,
+//             // background: '#ffffff',
+//             background: 'transparent',
+//             wireframes: false
+//         }
+//     });
+
+//     let shapes = [];
+//     let ground, wallLeft, wallRight, roof;
+
+//     function getShapeProperties() {
+//         const sw = window.innerWidth;
+//         if (sw > 1024) return { shapeCount: 25, shapeHeight: 50 };
+//         if (sw > 760)  return { shapeCount: 30, shapeHeight: 30 };
+//         return { shapeCount: 30, shapeHeight: 25 };
+//     }
+
+//     function createWorld() {
+//         World.clear(world, false);
+//         shapes = [];
+
+//         const sh = getCanvasHeight();
+//         const sw = window.innerWidth;
+
+//         ground = Bodies.rectangle(sw / 2, sh + 10, sw + 100, 100, { isStatic: true });
+//         wallLeft = Bodies.rectangle(-50, 0, 100, sh * 2, { isStatic: true });
+//         wallRight = Bodies.rectangle(sw + 50, 0, 100, sh * 2, { isStatic: true });
+//         roof = Bodies.rectangle(sw / 2, 0, sw, 100, { isStatic: true });
+
+//         let texturePaths = container.dataset.texture;
+//         if (typeof texturePaths === 'string') {
+//             texturePaths = JSON.parse(texturePaths);
+//         }
+
+//         const { shapeCount, shapeHeight } = getShapeProperties();
+//         const aspectRatio = 133 / 40;
+//         const shapeWidth = shapeHeight * aspectRatio;
+
+//         for (let i = 0; i < shapeCount; i++) {
+//             const shape = Bodies.rectangle(
+//                 i * shapeWidth / 1.5,
+//                 Math.random() * (sh - shapeHeight),
+//                 shapeWidth,
+//                 shapeHeight,
+//                 {
+//                     chamfer: { radius: 10 },
+//                     render: {
+//                         sprite: {
+//                             texture: texturePaths[i % texturePaths.length],
+//                             xScale: shapeWidth / 133,
+//                             yScale: shapeHeight / 40
+//                         }
+//                     }
+//                 }
+//             );
+//             shapes.push(shape);
+//         }
+
+//         World.add(world, [ground, wallLeft, wallRight, roof, ...shapes]);
+//     }
+
+//     createWorld();
+
+//     const mouse = Mouse.create(render.canvas);
+//     const mouseConstraint = MouseConstraint.create(engine, {
+//         mouse: mouse,
+//         constraint: { stiffness: 0.2, render: { visible: false } }
+//     });
+
+//     World.add(world, mouseConstraint);
+//     render.mouse = mouse;
+
+//     mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+//     mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+
+//     Matter.Runner.run(engine);
+//     Render.run(render);
+
+//     let isVisible = false;
+
+//     const observer = new IntersectionObserver(entries => {
+//         isVisible = entries[0].isIntersecting;
+//     }, { threshold: 0.1 });
+
+//     observer.observe(container);
+
+//     window.addEventListener('scroll', () => {
+//         if (!isVisible) return;
+
+//         shapes.forEach(shape => {
+//             Matter.Body.applyForce(shape, shape.position, {
+//                 x: 0,
+//                 y: (Math.random() - 0.5) * 0.2
+//             });
+//         });
+//     });
+// }
+// window.addEventListener('load', () => {
+//     initMatterCanvas('footerCanvas');
+//     initMatterCanvas('sectionCanvas');
+// });
+
+// New Matter JS2
+function initMatterCanvas(canvasId) {
+    const container = document.getElementById(canvasId);
+    if (!container) return;
+
+    const Engine = Matter.Engine,
+          Render = Matter.Render,
+          MouseConstraint = Matter.MouseConstraint,
+          Mouse = Matter.Mouse,
+          World = Matter.World,
+          Bodies = Matter.Bodies;
+
+    const engine = Engine.create();
+    const world = engine.world;
+
+    function getCanvasHeight() {
+        const mobileHeight = parseInt(container.dataset.mheight) || 200;
+        const desktopHeight = parseInt(container.dataset.dheight) || 300;
+
+        return window.innerWidth <= 764
+            ? mobileHeight
+            : desktopHeight;
+        // return window.innerWidth > 764 ? 300 : 200;
+    }
+
+    // 👉 ambil background dari data attribute (fallback putih)
+    const backgroundColor = container.dataset.bg || '#ffffff';
+
+    const render = Render.create({
+        element: container,
+        engine: engine,
+        options: {
+            width: window.innerWidth,
+            height: getCanvasHeight(),
+            pixelRatio: window.devicePixelRatio,
+            background: backgroundColor,
+            wireframes: false
+        }
+    });
+
+    let shapes = [];
+
+    function getShapeProperties() {
+        const sw = window.innerWidth;
+        if (sw > 1024) return { shapeCount: 25, shapeHeight: 50 };
+        if (sw > 760)  return { shapeCount: 30, shapeHeight: 30 };
+        return { shapeCount: 30, shapeHeight: 25 };
+    }
+
+    function createWorld() {
+        World.clear(world, false);
+        shapes = [];
+
+        const sh = getCanvasHeight();
+        const sw = window.innerWidth;
+
+        const ground = Bodies.rectangle(sw / 2, sh + 10, sw + 100, 100, { isStatic: true, render: { visible: false } }) ;
+        const wallLeft = Bodies.rectangle(-50, 0, 100, sh * 2, { isStatic: true, render: { visible: false } });
+        const wallRight = Bodies.rectangle(sw + 50, 0, 100, sh * 2, { isStatic: true, render: { visible: false } });
+        const roof = Bodies.rectangle(sw / 2, 0, sw, 100, { isStatic: true, render: { visible: false } });
+
+        let texturePaths = container.dataset.texture;
+        if (typeof texturePaths === 'string') {
+            texturePaths = JSON.parse(texturePaths);
+        }
+
+        const { shapeCount, shapeHeight } = getShapeProperties();
+        const aspectRatio = 133 / 40;
+        const shapeWidth = shapeHeight * aspectRatio;
+
+        for (let i = 0; i < shapeCount; i++) {
+            const shape = Bodies.rectangle(
+                i * shapeWidth / 1.5,
+                Math.random() * (sh - shapeHeight),
+                shapeWidth,
+                shapeHeight,
+                {
+                    chamfer: { radius: 10 },
+                    render: {
+                        sprite: {
+                            texture: texturePaths[i % texturePaths.length],
+                            xScale: shapeWidth / 133,
+                            yScale: shapeHeight / 40
+                        }
+                    }
+                }
+            );
+            shapes.push(shape);
+        }
+
+        World.add(world, [ground, wallLeft, wallRight, roof, ...shapes]);
+    }
+
+    createWorld();
+
+    function resizeMatter() {
+        const newHeight = getCanvasHeight();
+        const newWidth = window.innerWidth;
+    
+        render.canvas.width = newWidth;
+        render.canvas.height = newHeight;
+    
+        render.options.width = newWidth;
+        render.options.height = newHeight;
+    
+        createWorld(); // rebuild bodies supaya tidak keluar bounds
+    }
+    
+    let resizeTimeout;
+
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(resizeMatter, 150);
+    });
+
+    const mouse = Mouse.create(render.canvas);
+    const mouseConstraint = MouseConstraint.create(engine, {
+        mouse: mouse,
+        constraint: {
+            stiffness: 0.2,
+            render: { visible: false }
+        }
+    });
+
+    World.add(world, mouseConstraint);
+    render.mouse = mouse;
+
+    mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+    mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+
+    Matter.Runner.run(engine);
+    Render.run(render);
+
+    
+    let isVisible = false;
+
+    const observer = new IntersectionObserver(entries => {
+        isVisible = entries[0].isIntersecting;
+    }, { threshold: 0.1 });
+
+    observer.observe(container);
+
+    window.addEventListener('scroll', () => {
+        if (!isVisible) return;
+
+        shapes.forEach(shape => {
+            Matter.Body.applyForce(shape, shape.position, {
+                x: 0,
+                y: (Math.random() - 0.5) * 0.2
+            });
+        });
+    });
+}
+window.addEventListener('load', () => {
+    initMatterCanvas('sectionCanvas');
+    initMatterCanvas('footerCanvas');
+});
+
+
+$('.enrollswipe').each(function(){
+    var t= $(this),
+        p= $('.enrollmentpage'),
+        f= p.find('#content-form'),
+        bt= p.find('.btj'),
+        h1 = p.find('h1').get(0);
+    t.on('click', function(){
+        p.toggleClass('form-view');
+        // Scroll to the first <h1> in the enrollment page when the enrollswipe button is clicked
+        if (h1) {
+            h1.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        setTimeout(function() {
+            f.removeClass('hidden');
+            bt.toggleClass('hidden flex');
+        }, 500); // 500ms delay
+    })
+    // Example: Add a timeout before toggling the form-view class
+    bt.on('click', function(){
+        p.toggleClass('form-view');
+        if (h1) {
+            h1.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        f.toggleClass('hidden');
+        bt.toggleClass('hidden flex');
+        setTimeout(function() {
+        }, 500); // 500ms delay
+    });
+})
+
+
+// window.addEventListener('resize', function() {
+//     $('#windowwidth').html(window.innerWidth)
+// });
 
 
