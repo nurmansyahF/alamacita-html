@@ -1118,6 +1118,7 @@ canvas{
     .aboutpage .team-wrapp{
         max-width: 80%;
     }
+<<<<<<< HEAD
 
     .aboutpage .section-three .cloud-aksen:nth-child(1){
         width: 130px;
@@ -1129,6 +1130,11 @@ canvas{
     }
     .contactusgal img{
         /* height: 600px; */
+=======
+    
+    .contactusgal img{
+        height: 600px;
+>>>>>>> origin/main
     }
     
     
@@ -1273,9 +1279,13 @@ canvas{
         display: none;
     }
     .contactusgal img{
+<<<<<<< HEAD
         /* max-height: 200px; */
     }
     .aboutpage .section-three .cloud-aksen:nth-child(1){
         width: 110px;
+=======
+        max-height: 200px;
+>>>>>>> origin/main
     }
 }
