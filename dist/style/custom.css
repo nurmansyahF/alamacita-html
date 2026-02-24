@@ -366,6 +366,7 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
     line-height: 110%;
     letter-spacing: -0.05em;
     margin-bottom: 8px;
+    font-family: 'Sora', sans-serif;
 }
 .cus-list address, .cus-list a, .cus-list p, .cus-list span{
     text-decoration: none;
@@ -968,7 +969,8 @@ canvas{
 
 .facility-gallery .fg-item:nth-child(even) .fg-card{
     right: inherit;
-    left: 56px;
+    /* left: 56px; */
+    left: 20px;
 }
 
 canvas{
@@ -986,12 +988,22 @@ canvas{
     display: block;
 }
 
+.contactusgal img{
+    max-height: clamp(600px, 80vh, 800px);
+    /* max-height: 800px; */
+}
+
 @media only screen and (max-width: 1000px) {
     .header-logo{
         width: calc(4/12 * 100%);
     }
     .header-logo img{
         max-height: 40px;
+    }
+    .header-right .nav{
+        max-width: 728px;
+        margin: 0 auto;
+        padding-inline: 20px;
     }
 
     .section-three .cloud-aksen:nth-child(1){
@@ -1102,7 +1114,22 @@ canvas{
     .jrny-card{
         
     }
-    
+
+    .aboutpage .team-wrapp{
+        max-width: 80%;
+    }
+
+    .aboutpage .section-three .cloud-aksen:nth-child(1){
+        width: 130px;
+        left: 0;
+    }
+    .aboutpage .section-three .cloud-aksen.-bottom-20{
+        left: inherit;
+        right: 0;
+    }
+    .contactusgal img{
+        /* height: 600px; */
+    }
     
     
 }
@@ -1115,6 +1142,10 @@ canvas{
     /* .header .nav-link:not(.enrollclick){
         display: none;
     } */
+    .header-right .nav{
+        max-width: 100%;
+        padding: 0;
+    }
     .section-two .container{
         height: 100vh;
     }
@@ -1240,5 +1271,11 @@ canvas{
     }
     .jrny-card::before{
         display: none;
+    }
+    .contactusgal img{
+        /* max-height: 200px; */
+    }
+    .aboutpage .section-three .cloud-aksen:nth-child(1){
+        width: 110px;
     }
 }

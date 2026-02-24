@@ -79,7 +79,7 @@ $(document).ready(function() {
             // Jika scroll ke bawah, hapus class 'fixed'
             else if (scrollTop > lastScrollTop) {
                 header.removeClass('fix').addClass('sticky');
-                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0 || $('main.contactuspage').length > 0 || $('main.dinamicheader').length > 0) {
+                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0 || $('main.contactuspage').length > 0 || $('main.dinamicheader').length > 0 || $('main.enrollmentpage').length > 0) {
                     header.addClass('bg-white')
                 }
             }
