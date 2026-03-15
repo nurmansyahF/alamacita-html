@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap">
+  <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link href="./style/main.css?v=20" rel="stylesheet">
   <link href="./style/custom.css?v=20" rel="stylesheet">
 </head>
@@ -61,255 +62,593 @@
         </div>
       </div>
     </section>
-    <section id="elementary" class="section-six bg-[#7FC0EB] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative">
-      <!-- <div class="bg-aksen z-0 absolute left-[-18%] top-[34%] w-[56.25rem] h-[56.25rem] bg-[url(../images/aksen-s6-blue.svg)] bg-auto bg-no-repeat"></div> -->
+    
+    <section class="section-one bg-[#7FC0EB] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative">
       <div class="container mx-auto px-[20px] relative z-20">
-        <div class="top lg:mb-40">
-          <div class="lg:flex-6/12 lg:max-w-6/12 fle-[0_0_100%] max-w-full">
-            <h2 class="text-primary font-sora lg:text-[60px] md:text-4xl text-[32px] leading-[1.4] -tracking-[0.05em] lg:mb-10 mb-16">Elementary Program
-              Cambridge & National</h2>
-          </div>
-        </div>
-        <div class="flex flex-wrap">
-          <div class="flex flex-wrap justify-between flex-1/2">
-            <div class="lg:flex-5/12 flex-[0_0_100%] w-full order-2 lg:order-1">
-              <div class="curi-highlight">
-                <span class="text-primary block mb-6 font-medium">Curriculum Highlights</span>
-                <ul class="curi-list text-primary lg:pr-10">
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain rotate-45" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Global Perspective</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Foster a broad worldview by incorporating international content and cultural awareness, encouraging students to understand and appreciate diversity.</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain rotate-45" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Student-Centered Learning</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Focus on personalized learning approaches, promoting critical thinking and independent inquiry while addressing individual student needs and strengths.</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain rotate-45" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Skill Development</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Emphasize the development of core academic skills, including literacy, numeracy, and scientific thinking.</p>
-                      </div>
-                    </div>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-wrap justify-between flex-1/2">
-            <div class="lg:flex-5/12 flex-[0_0_100%] w-full order-2 lg:order-1">
-              <div class="curi-highlight">
-                <span class="text-primary block mb-6 font-medium">National Curriculum</span>
-                <ul class="curi-list text-primary lg:pr-10">
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Personalized Learning</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Emphasize student autonomy and flexibility in learning, allowing students to explore their interests and learn at their own pace.</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Character Building</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Focus on the development of key moral values, including integrity, empathy, and respect, aiming to nurture students’ character and social-emotional well-being</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="flex align-top">
-                    <img class="w-6 h-6 inline-block align-middle mt-1 mr-2 object-contain" src="images/curi-icon-2.svg" alt="icon" class="curi-icon">
-                    <div class="text text-m">
-                      <h4 class="font-semibold mb-2">Contextual and Local Content</h4>
-                      <div class="text-[16px] font-medium tracking-[-0.02em]">
-                        <p>Incorporate local wisdom, culture, and community-based learning, connecting students with their heritage and environment while preparing them to be global citizens.</p>
-                      </div>
-                    </div>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h4 class="text-primary font-medium mb-2 text-center">Our Learning Approach</h4>        
+        <h2 class="text-primary font-sora text-center lg:text-[60px] md:text-4xl text-[32px] leading-[1.4] tracking-[-0.05em] mb-16">Elementary Program</h2>
         
+        <!-- <div class="circle-wrap mx-auto mb-20">
+          <div class="circle">
+            <h3 class="text-2xl lg:text-[40px] text-primary font-medium text-center">Project Based 
+              Learning</h3>
+            <span class="aksen aksen-1"></span>
+            <span class="aksen aksen-2"></span>
+            <span class="aksen aksen-3"></span>
+          </div>
+          <div class="circle-program blue">Cambridge Curriculum</div>
+          <div class="circle-program red">National Curriculum</div>
+          <div class="circle-program green">Sustainability  Approach</div>
+        </div> -->
+
+        <div class="relative w-[clamp(240px,80vw,480px)] aspect-square border-2 border-dashed border-[#006391] rounded-full flex flex-rowmd:flex-col items-center justify-center bg-[#9ACDEF] mx-auto mb-20">
         
+          <h3 class="text-2xl lg:text-[40px] text-primary font-medium text-center lg:max-w-[240px]">Project Based 
+            Learning</h3>
+  
+          <div class="accent-wrapper" style="--angle: 0deg;--transx:-5%;">
+              <div class="accent-content flex items-center gap-2">
+                  <div class="w-4 h-4 bg-orange-200 border border-orange-400 rotate-45 shrink-0"></div>
+                  <div class="bg-[#F9DAD7] px-4 py-2 border border-[#910C00] rounded-lg text-[#910C00] whitespace-nowrap">
+                      National Curriculum
+                  </div>
+              </div>
+          </div>
+  
+          <div class="accent-wrapper" style="--angle: -150deg;--transx:-15%;">
+              <div class="accent-content flex flex-row-reverse items-center gap-2">
+                  <div class="w-4 h-4 bg-blue-100 border border-blue-400 rotate-45 shrink-0"></div>
+                  <div class="bg-[#D7EBF9] px-4 py-2 border border-blue-400 rounded-lg text-blue-900 shadow-sm whitespace-nowrap">
+                      Cambridge Curriculum
+                  </div>
+              </div>
+          </div>
+  
+          <div class="accent-wrapper" style="--angle: 140deg; --transx:-22%;">
+              <div class="accent-content flex items-center gap-2">
+                  <div class="bg-[#D1E27C] px-4 py-2 border border-lime-600 rounded-lg text-lime-900 shadow-sm whitespace-nowrap">
+                      Sustainability Approach
+                  </div>
+                  <div class="w-4 h-4 bg-lime-200 border border-lime-500 -rotate-12 shrink-0"></div>
+              </div>
+          </div>
+  
+      </div>
+        
+        <div class="text-primary text-xl lg:text-2xl font-sora font-medium mb-6 text-center">It’s Not About The Final Product</div> 
+        <div class="text-primary text-2xl lg:text-[40px] font-medium text-center lg:max-w-[872px] mx-auto mb-6">We assess the entire journey, not just the destination. This gives a much more complete pictures of your child’s learning.</div>
+        <div class="child-learning flex flex-wrap justify-center gap-4 lg:max-w-[872px] mx-auto ">
+          <div class="cl-pill">Teamwork & Collaboration</div>
+          <div class="cl-pill">Research & Investigation</div>
+          <div class="cl-pill">Problem Solving Steps</div>
+          <div class="cl-pill">Draft & Revision</div>
+          <div class="cl-pill">Final Presentation and Product</div>
+        </div>
+      
       </div>
     </section>
-    
-    <section class="section-three bg-[#F4FDFF] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative tracking-[-0.02em]">
-      <div class="container mx-auto px-[20px] relative z-20">
-        <h2 class="text-primary block font-normal font-sora text-6xl leading-[1.1em] tracking-[-0.05em] mx-auto lg:max-w-[872px] mb-[130px] text-center">We use a variety of assessment methods to track student progress and provide feedback</h2>
-        <div class="montessori-wrapp flex flex-wrap justify-center gap-0 max-w-[94%] mx-auto">
-          <div class="montesorri-item text-white p-6 text-center">
-            <img class="svg" src="images/montessori-shape-4.svg" alt="svg">
-            <div class="text">
-              <h3 class="text-[28px] leading-[1.2em] tracking-[-0.05em] font-sora font-semibold mb-2">Portfolio Assessments</h3>
-              <p class="tracking-[-0.02em] leading-[1.5em] font-medium">Collections of student work showcasing their growth and achievements.</p>
+
+    <section class="bg-[#D7EBF9] lg:py-[120px] overflow-hidden md:py-[90px] py-[60px] relative tracking-[-0.02em]">
+      <div class="container mx-auto px-[20px]">
+        <div class="section-heading flex justify-between">
+          <h2 class="text-primary block font-semibold font-sora text-base mb-[66px]">How Project Based Learning works</h2>
+          <div class="swiper-dayactivity-nav blue"><div class="dayactivity-prev"></div><div class="dayactivity-next"></div></div>
+        </div>
+        <div class="swiper swiper-dayactivity">
+          <div class="swiper-wrapper">
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#7FC0EB] text-[#006391] rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">01</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Big Question</h3>
+                  <p class="font-medium">Student are given a real-life question that is meaningful to them
+                    Ex: “how can we reduce waste in our school”</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#EEF6CA] text-secondary rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">02</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Explore</h3>
+                  <p class="font-medium">Student investigate the topic through; observation, discussion, play- they are encourage to wonder</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#7FC0EB] text-[#006391] rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">03</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Learn</h3>
+                  <p class="font-medium">Teacher introduce key knowledge and skill ( math, english, science, ICT, national curriculum) all taught in connected way</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#ABD6F2] text-[#006391] rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">04</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Try</h3>
+                  <p class="font-medium">Student Apply what they have learn ( practice, experiment, test ideas, improve)</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#CDE667] text-[#3A6B0C] rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">05</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Create</h3>
+                  <p class="font-medium">Use their knowledge to make something meaningful
+                    (poster, model, presentation, etc)--young creators</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-auto swiper-slide">
+              <div class="bg-[#EEF6CA] text-[#3A6B0C] rounded-[12px] py-10 px-12 lg:w-[600px] min-h-[240px] flex flex-col justify-between relative overflow-hidden">
+                <div class="number text-2xl font-semibold mb-6">06</div>
+                <div class="text">
+                  <h3 class="text-xl lg:text-[28px] font-sora font-semibold mb-2">Share</h3>
+                  <p class="font-medium">Present work/project to class/teachers/parents to explain what they have learn and why it matter</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="montesorri-item text-secondary p-6 text-center">
-            <img class="svg" src="images/montessori-shape-3-light.svg.svg" alt="svg">
-            <div class="text">
-              <h3 class="text-[28px] leading-[1.2em] tracking-[-0.05em] font-sora font-semibold mb-2">Formative Assessments</h3>
-              <p class="tracking-[-0.02em] leading-[1.5em] font-medium">Ongoing assessments to monitor learning and guide instruction</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-five bg-white lg:py-[120px] overflow-hidden md:py-[90px] py-[60px] relative tracking-[-0.02em]">
+      <div class="container mx-auto px-[20px]">
+        <div class="breadcrumbs flex items-center mb-10 lg:mb-[66px]">
+          <span class="text-primary inline-flex font-semibold font-sora text-[12px] md:text-base ">Project  Based Learning</span>
+          <span class="text-primary inline-flex font-semibold font-sora text-[12px] md:text-base">Student Personal Development</span>
+        </div>
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item border-b border-primary mb-6 active">
+          <div class="accordion-toggle w-full px-2 py-2 text-center font-medium transition flex items-center gap-4 text-primary font-intrumentsans active">
+            <div class="text-4xl btn-expnd w-10 h-10 leading-[38px] rounded-full border border-primary">-</div>
+              <h3 class="font-medium text-2xl lg:text-[40px]  tracking-[-0.04em] leading-[.8em]"> Cambridge Curriculum
+              </h3>
+            </div>
+            <div id="accordion1" class="accordion-content pt-10 pb-20 pl-[65px] ">
+                <div class="content">
+                    <ul class="curriculum-list text-primary font-medium space-y-6 mb-10">
+                      <li>
+                        <h4 class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Global Perspective</h4>
+                        <p>Foster a broad worldview by incorporating international content and cultural awareness, encouraging students to understand and appreciate diversity.</p>
+                      </li>
+                      <li>
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Student-Centered Learning</h4>
+                        <p>Focus on personalized learning approaches, promoting critical thinking and independent inquiry while addressing individual student needs and strengths.</p>
+                      </li>
+                      <li>                        
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Skill Development</h4>
+                        <p>Emphasize the development of core academic skills, including literacy, numeracy, and scientific thinking.</p>
+                      </li>
+                    </ul>
+                    <h4 class="text-primary inline-flex font-semibold font-sora text-base opacity-80 mb-4">Learning Framework</h4>
+                    <div class="framework-wraps grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                      <div class="frameworks-item blue">
+                        <img src="images/file-folder-blue.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Mathematics</span>
+                      </div>
+                      <div class="frameworks-item blue">
+                        <img src="images/file-folder-blue.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">English</span>
+                      </div>
+                      <div class="frameworks-item blue">
+                        <img src="images/file-folder-blue.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Science</span>
+                      </div>
+                      <div class="frameworks-item blue">
+                        <img src="images/file-folder-blue.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Global Perspectives</span>
+                      </div>
+                      <div class="frameworks-item blue">
+                        <img src="images/file-folder-blue.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Digital Literacy/ICT</span>
+                      </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item border-b border-primary mb-6">
+          <div class="accordion-toggle w-full px-2 py-2 text-center font-medium transition flex items-center gap-4 text-primary font-intrumentsans">
+            <div class="text-4xl btn-expnd w-10 h-10 leading-[38px] rounded-full border border-primary">-</div>
+              <h3 class="font-medium text-2xl lg:text-[40px]  tracking-[-0.04em] leading-[.8em]"> National Curriculum
+              </h3>
+            </div>
+            <div id="accordion2" class="accordion-content hidden pt-10 pb-20 pl-[65px]">
+                <div class="content">
+                    <ul class="curriculum-list text-primary font-medium space-y-6 mb-10">
+                      <li>
+                        <h4 class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Personalized Learning</h4>
+                        <p>Emphasize student autonomy and flexibility in learning, allowing students to explore their interests and learn at their own pace.</p>
+                      </li>
+                      <li>
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Character Building</h4>
+                        <p>Focus on the development of key moral values, including integrity, empathy, and respect, aiming to nurture students’ character and social-emotional well-being.</p>
+                      </li>
+                      <li>                        
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Contextual and Local Content</h4>
+                        <p>Incorporate local wisdom, culture, and community-based learning, connecting students with their heritage and environment while preparing them to be global citizens.</p>
+                      </li>
+                    </ul>
+                    <h4 class="text-primary inline-flex font-semibold font-sora text-base opacity-80 mb-4">Learning Framework</h4>
+                    <div class="framework-wraps grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                      <div class="frameworks-item red">
+                        <img src="images/file-folder-red.svg" alt="cover">
+                        <span class="text-[#910C00] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Bahasa Indonesia</span>
+                      </div>
+                      <div class="frameworks-item red">
+                        <img src="images/file-folder-red.svg" alt="cover">
+                        <span class="text-[#910C00] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Physical Education</span>
+                      </div>
+                      <div class="frameworks-item red">
+                        <img src="images/file-folder-red.svg" alt="cover">
+                        <span class="text-[#910C00] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Moral Education</span>
+                      </div>
+                      <div class="frameworks-item red">
+                        <img src="images/file-folder-red.svg" alt="cover">
+                        <span class="text-[#910C00] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Pend. Pancasila</span>
+                      </div>
+                      <div class="frameworks-item red">
+                        <img src="images/file-folder-red.svg" alt="cover">
+                        <span class="text-[#910C00] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Music & Art</span>
+                      </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item border-b border-primary mb-6">
+          <div class="accordion-toggle w-full px-2 py-2 text-center font-medium transition flex items-center gap-4 text-primary font-intrumentsans">
+            <div class="text-4xl btn-expnd w-10 h-10 leading-[38px] rounded-full border border-primary">-</div>
+              <h3 class="font-medium text-2xl lg:text-[40px]  tracking-[-0.04em] leading-[.8em]"> Sustainability Approach
+              </h3>
+            </div>
+            <div id="accordion2" class="accordion-content hidden pt-10 pb-20 pl-[65px]">
+                <div class="content">
+                    <ul class="curriculum-list text-primary font-medium space-y-6 mb-10">
+                      <li>
+                        <h4 class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Global Perspective</h4>
+                        <p>Foster a broad worldview by incorporating international content and cultural awareness, encouraging students to understand and appreciate diversity.</p>
+                      </li>
+                      <li>
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Student-Centered Learning</h4>
+                        <p>Focus on personalized learning approaches, promoting critical thinking and independent inquiry while addressing individual student needs and strengths.</p>
+                      </li>
+                      <li>                        
+                        <h4  class="font-sora text-2xl font-semibold mb-2 leading-[1.1]">Skill Development</h4>
+                        <p>Emphasize the development of core academic skills, including literacy, numeracy, and scientific thinking.</p>
+                      </li>
+                    </ul>
+                    <h4 class="text-primary inline-flex font-semibold font-sora text-base opacity-80 mb-4">Learning Framework</h4>
+                    <div class="framework-wraps grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Bahasa Indonesia</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Physical Education</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Moral Education</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Pend. Pancasila</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-primary block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Music & Art</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Bahasa Indonesia</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Physical Education</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Moral Education</span>
+                      </div>
+                      <div class="frameworks-item green">
+                        <img src="images/file-folder-green.svg" alt="cover">
+                        <span class="text-[#3A6B0C] block w-full text-xl font-medium leading-[1.2] tracking-[-2%]">Pend. Pancasila</span>
+                      </div>
+                    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </section>
+
+    <section class="section-howwe bg-[#F4FDFF] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative tracking-[-0.02em]">
+      <div class="container mx-auto px-[20px] flex flex-wrap items-center justify-between relative z-20">
+        <div class="lg:flex-6/12 lg:max-w-6/12 max-w-full triangle-shape">
+          <div class="montesorri-item shape-4 text-white text-center">
+            <div class="text ">
+              <h3 class="text-[28px] font-sora font-semibold mb-2">Collaboration</h3>
+              <p>They work in teams, learning to listen, share ideas, and achieve a common goal.</p>
             </div>
           </div>
-          <div class="montesorri-item text-white p-6 text-center">
-            <img class="svg" src="images/montessori-shape-32-light.svg" alt="svg">
-            <div class="text">
-              <h3 class="text-[28px] leading-[1.2em] tracking-[-0.05em] font-sora font-semibold mb-2">Summative Assessments</h3>
-              <p class="tracking-[-0.02em] leading-[1.5em] font-medium">Periodic tests and projects to evaluate overall understanding</p>
+          <div class="montesorri-item shape-3 text-white text-center">
+            <div class="text ">
+              <h3 class="text-[28px] font-sora font-semibold mb-2">Critical
+                Thinking</h3>
+              <p>Students learn to “ask why” and find creative solutions, not just memorize answer</p>
             </div>
           </div>
-          <div class="montesorri-item text-secondary p-6 text-center">
-            <img class="svg" src="images/montessori-shape-42-light.svg" alt="svg">
-            <div class="text">
-              <h3 class="text-[28px] leading-[1.2em] tracking-[-0.05em] font-sora font-semibold mb-2">Regular Parent-Teacher Communication</h3>
-              <p class="tracking-[-0.02em] leading-[1.5em] font-medium">Keeping parents informed about their child’s progress and addressing any concerns</p>
+          <div class="montesorri-item shape-6 text-secondary text-center">
+            <div class="text ">
+              <h3 class="text-[28px] font-sora font-semibold mb-2">Communication</h3>
+              <p>Students learn to present their ideas clearly and confidently to their peers and teachers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lg:flex-5/12 lg:max-w-5/12 max-w-full mb-16 lg:mb-0">
+          <h4 class="text-2xl text-primary font-medium mb-6 opacity-[70%]">How we Tie It All Together?</h4>
+          <h2 class="text-primary lg:text-[40px] md:text-4xl text-[32px] leading-[1.2] tracking-[-0.05em] mb-6">Project Based Learning is the engine that runs our school. Students learn by ‘doing”, working on long term projects that solve real world problems</h2>      
+        </div>
+      </div>
+    </section>
+
+    <section class="section-program bg-[#D7EBF9] lg:py-[120px] md:py-[90px] py-[60px] relative text-secondary">
+      <div class="cloud-aksen absolute -top-10 lg:-top-16 left-0.5">
+        <img src="images/cloud-aksen.svg" alt="" class="object-contain max-h-[80px] lg:max-h-[120px]">
+      </div>
+      <div class="container mx-auto px-[20px] flex justify-center">
+        <div class="lg:flex-6/12 lg:max-w-6/12 ">
+          <h2 class="text-primary font-sora lg:text-[60px] md:text-[44px] text-[32px] leading-[1.2] text-center -tracking-tight lg:max-w-[644px] mx-auto mb-10">Activity Program</h2>
+          </div>
+        </div>
+      <div class="container mx-auto">
+        <h3 class="with-dashed font-sora text-primary text-center text-2xl font-semibold mb-10"><span class="inline-block bg-[#D7EBF9] px-6">Our Activities</span></h3>
+        <div class="program-wrapp grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Clubs</h4>
+              <p>Science Club, Math Club, Book Club, Debate cLub, etc</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/activity-program-1.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Eco Heroes</h4>
+              <p>Inspires children to become advocates for our planet. Through hands-on projects, nature exploration, and engaging discussions, students learn about environmental issues</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/activity-program-2.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Music</h4>
+              <p>Blends the rich traditions of Indonesian music with the energy of modern sounds, creating a vibrant and engaging musical journey</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/activity-program-3.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Spiritual Studies</h4>
+              <p>Focus on exploring shared values like compassion, kindness, respect, and gratitude.</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Makerspace & Art</h4>
+              <p>Unleash creativity and innovation through hands-on projects, exploring various art mediums and design thinking in our dedicated Maker Space.</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Computer</h4>
+              <p>Build robots, learn programming fundamentals, and develop critical thinking and problem-solving skills in a fun, hands-on environment.</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Field trip</h4>
+              <p>Students engage in meaningful activities that foster creativity, physical activity, and community service.</p>
+            </div>
+          </div>
+        </div> 
+        <h3 class="with-dashed font-sora text-primary text-center text-2xl font-semibold mb-10"><span class="inline-block bg-[#D7EBF9] px-6">Extracurricular activities</span></h3>
+        <div class="program-wrapp grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Coding</h4>
+              <p>Provides a playful and inspiring environment where children explore a variety of artistic mediums and techniques</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Swimming</h4>
+              <p>Our swimming program offers a fun and safe way for children Aim develop essential water skills and build confidence in the pool.</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Story Crafting</h4>
+              <p>Science Club, Math Club, Book Club, Debate cLub, etc</p>
+            </div>
+          </div>
+          <div class="program-card">
+            <div class="thumbnail mb-6">
+              <img src="images/program-thumbnail-dummy-blue.jpg" alt="img">
+            </div>
+            <div class="text text-primary ">
+              <h4 class="text-2xl font-semibold mb-2">Modern Dance</h4>
+              <p>Science Club, Math Club, Book Club, Debate cLub, etc</p>
+            </div>
+          </div>
+        </div> 
+      </div>
+          
+      </div>
+    </section>
+
+    <section class="bg-[#F4FDFF] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative">
+      <div class="container mx-auto px-[20px] flex flex-wrap justify-between relative z-20">
+        <div class="lg:max-w-[80%] mx-auto mb-16">
+          <h2 class="text-primary font-sora lg:text-[60px] md:text-4xl text-[32px] leading-[1.1] tracking-[0.05rem]  mb-4 text-center lg:max-w-[700px] mx-auto ">Cultivating the Future Custodians of Our Planet</h2>
+              <p class="text-primary font-medium text-lg lg:text-2xl leading-[1.4] lg:max-w-[872px] mx-auto text-center opacity-[70%]">At Almacita, sustainability is not just a subject—it is a way of life. We empower students to connect classroom knowledge with real-world action through a curriculum designed for lasting impact.</p>
+        </div>
+        <div class="heading-w-dashed w-full mb-10"><h3 class="text-xl lg:text-2xl text-primary font-sora font-semibold text-center bg-[#F4FDFF] max-w-max z-2 relative mx-auto px-6">9 sustainability modules</h3></div>
+        
+        <div class="sustain-modules-wrap w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+          <div class="module-card p-6 flex gap-6 bg-[#F3F9DC] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-secondary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-secondary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Biodiversity</h4>
+              <ul class="font-semibold">
+                <li>Protecting ecosystems</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#F3F9DC] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-secondary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-secondary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Air</h4>
+              <ul class="font-semibold">
+                <li>Ensuring clean air quality</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#F3F9DC] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon w-12 h-12 bg-secondary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text text-secondary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Energy</h4>
+              <ul class="font-semibold">
+                <li>Advocating renewable use</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#D7EBF9] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-blue.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-primary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Energy</h4>
+              <ul class="font-semibold">
+                <li>Supporting responsible consumption</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#D7EBF9] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-blue.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-primary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Fashion</h4>
+              <ul class="font-semibold">
+                <li>Encouraging sustainable choices</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#D7EBF9] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-blue.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-primary">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Water</h4>
+              <ul class="font-semibold">
+                <li>Conserving water resources</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#F9DAD7] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-red.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-[#910C00]">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Shelter</h4>
+              <ul class="font-semibold">
+                <li>Promoting eco-friendly spaces</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#F9DAD7] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-red.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-[#910C00]">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Waste</h4>
+              <ul class="font-semibold">
+                <li>Reducing and recycling</li>
+              </ul>
+            </div>
+          </div>
+          <div class="module-card p-6 flex gap-6 bg-[#F9DAD7] rounded-[4px] shadow-[0px_1px_4px_0px_#00000029]">
+            <div class="icon shrink-0 w-12 h-12 bg-primary border-2 border-white overflow-hidden shadow-[0px_1px_4px_0px_#00000029]"><img src="images/program-thumbnail-dummy-red.jpg" alt="img" class="w-full h-full object-cover"></div>
+            <div class="text flex-1 text-[#910C00]">
+              <h4 class="text-lg lg:text-2xl leading-[1.1] font-sora font-semibold mb-2">Transportation</h4>
+              <ul class="font-semibold">
+                <li>Embracing green mobility</li>
+              </ul>
             </div>
           </div>
           
         </div>
-      </div>
-    </section>
-    <section class="section-three bg-[#F4FDFF] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative">
-      <div class="container mx-auto px-[20px] flex flex-wrap justify-between relative z-20">
-        <div class="lg:max-w-[80%]">
-          <h2 class="text-primary font-sora lg:text-[60px] md:text-4xl text-[32px] leading-[1.4] tracking-[-0.05em] mb-16">Sustainability Modules</h2>
-        </div>
-        <h3 class="text-2xl font-sora font-semibold mb-2">9 sustainability modules</h3>
-        <div class="sustain-modules-wrap w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="module-card p-6 flex gap-6 bg-[#DCEE95] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-secondary"></div>
-            <div class="text text-secondary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#E8F4B9] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-secondary"></div>
-            <div class="text text-secondary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#F3F9DC] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-secondary"></div>
-            <div class="text text-secondary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#7FC0EB] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-primary"></div>
-            <div class="text text-primary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#ABD6F2] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-primary"></div>
-            <div class="text text-primary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#D7EBF9] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-primary"></div>
-            <div class="text text-primary">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#EB887F] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-[#910C00]"></div>
-            <div class="text text-[#910C00]">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#F2B1AB] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-[#910C00]"></div>
-            <div class="text text-[#910C00]">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="module-card p-6 flex gap-6 bg-[#F9DAD7] rounded-[12px]">
-            <div class="icon w-12 h-12 bg-[#910C00]"></div>
-            <div class="text text-[#910C00]">
-              <h4 class="text-2xl font-semibold mb-2">Biodiversity</h4>
-              <ul>
-                <li>Protecting</li>
-                <li>Ecosystems</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-three bg-[#F4FDFF] lg:py-[120px] md:py-[90px] py-[60px] overflow-hidden relative">
-      <div class="container mx-auto px-[20px] flex flex-wrap justify-between relative z-20">
-        <div class="lg:max-w-[80%]">
-          <h2 class="text-primary font-sora lg:text-[60px] md:text-4xl text-[32px] leading-[1.4] tracking-[-0.05em] mb-16">Sustainability Approach</h2>
-        </div>
+
+        <div class="heading-w-dashed w-full mb-10"><h3 class="text-xl lg:text-2xl text-primary font-sora font-semibold text-center bg-[#F4FDFF] max-w-max z-2 relative mx-auto px-6">Sustainability Approach</h3></div>
         <div class="focuses-wrapp primary-light">
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div class="focuses-card">
-              <h3 class="text-2xl font-sora font-semibold mb-2">Environmental Awareness</h3>
+              <h3 class="text-xl lg:text-2xl font-sora font-semibold mb-2">Environmental Awareness</h3>
               <p>Incorporate lessons and activities that raise awareness about environmental issues, promote sustainable practices, and encourage students to take action to protect the planet.</p>
             </div>
             <div class="focuses-card">
-              <h3 class="text-2xl font-sora font-semibold mb-2">Project-Based Learning</h3>
+              <h3 class="text-xl lg:text-2xl font-sora font-semibold mb-2">Project-Based Learning</h3>
               <p>hands-on projects that address real-world sustainability challenges, such as waste reduction, energy conservation, and biodiversity preservation.</p>
             </div>
             <div class="focuses-card">
-              <h3 class="text-2xl font-sora font-semibold mb-2">Community Engagement</h3>
+              <h3 class="text-xl lg:text-2xl font-sora font-semibold mb-2">Community Engagement</h3>
               <p>Foster partnerships with local organizations and initiatives that promote sustainability.</p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
+    <section class="section-three bg-white lg:pt-[120px] md:pt-[90px] pt-[60px] overflow-hidden relative">
+      <div class="container mx-auto px-[20px] flex flex-wrap justify-between relative z-20">
+        <div class="cambridge">
+          <div class="img-box">
+            <img src="images/cambridge-certi.jpg" alt="img" class="max-h-[112px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
   <footer>
     <div class="section-ten lg:pt-[120px] md:pt-[90px] pt-[60px] pb-[40px]">
@@ -398,6 +737,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="scripts/main.js?v=20"></script>
 </body>
 </html>

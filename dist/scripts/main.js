@@ -1214,9 +1214,78 @@ $('.enrollswipe').each(function(){
     });
 })
 
+let swiper;
+let sdayactive;
+
+function initSwiper() {
+  if (window.innerWidth <= 1100 && !swiper) {
+    swiper = new Swiper('.montessori-wrapp', {
+        slidesPerView: 1,  
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+            // allowTouchMove: false
+          }
+        }
+      });
+  } 
+  
+  if (window.innerWidth > 768 && swiper) {
+    swiper.destroy(true, true);
+    swiper = undefined;
+  }
+  sdayactive = new Swiper('.swiper-dayactivity',{
+    slidesPerView: 1.2,
+    loop: false,
+    spaceBetween: -16,
+    navigation: {
+        nextEl: ".dayactivity-next",
+        prevEl: ".dayactivity-prev",
+    },
+    breakpoints: {
+        768: {
+        slidesPerView: 2.2,
+        // slidesPerView: "auto"
+        // allowTouchMove: false
+        }
+    }
+  });
+}
+
+initSwiper();
+window.addEventListener('resize', initSwiper);
+
+document.querySelectorAll("details").forEach((el) => {
+    el.addEventListener("toggle", () => {
+      if (el.open) {
+        document.querySelectorAll("details").forEach((other) => {
+          if (other !== el) other.open = false
+        })
+      }
+    })
+  })
 
 // window.addEventListener('resize', function() {
 //     $('#windowwidth').html(window.innerWidth)
 // });
 
+$('.accordion-toggle').click(function () {
+    const $thisItem = $(this).closest('.accordion-item');
+    const $thisContent = $thisItem.find('.accordion-content');
+    const $t = $(this);
+    const isOpen = $thisContent.is(':visible');
+  
+    // Tutup semua konten & reset
+    $('.accordion-content').slideUp();
+    $('.accordion-item').removeClass('active').find('.btn-expnd').html('+');
+    $('.accordion-toggle').removeClass('active');
+  
+    if (!isOpen) {
+      // Buka konten yang diklik
+      $thisContent.slideDown();
+      $thisItem.addClass('active');
+      $t.addClass('active');
+      $thisItem.find('.btn-expnd').html('-');
+    }
+  });
 

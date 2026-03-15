@@ -312,6 +312,7 @@ h1,h2,h3,h4,h5{letter-spacing: -0.05em;}
 }
 
 .mileston-stage .mileston-title{
+    font-family: Sora, sans-serif;
     font-size: 24px;
     line-height: 1.1em;
     margin-bottom: 8px;
@@ -519,14 +520,13 @@ dl.cus-list b{
     z-index: 20;
 }
 
-.focuses-wrapp .grid{
+.focuses-wrapp{
     border-top: 1px solid rgba(58, 107, 12, 15%);
     border-bottom: 1px solid rgba(58, 107, 12, 15%);
 }
-.focuses-wrapp .grid + .grid{
-    border-top: 0;
-}
+
 .focuses-card{
+    border-bottom: 1px solid rgba(58, 107, 12, 15%);
     border-right: 1px solid rgba(58, 107, 12, 15%);
     padding: 24px;
     color: #3A6B0C;
@@ -534,7 +534,7 @@ dl.cus-list b{
 .focuses-wrapp .grid + .grid{
     border-top: 0;
 }
-.focuses-wrapp.primary-light .grid{
+.focuses-wrapp.primary-light {
     border-top: 1px solid rgba(0, 99, 145, 0.15);
     border-bottom: 1px solid rgba(0, 99, 145, 0.15);
 }
@@ -549,28 +549,133 @@ dl.cus-list b{
 .focuses-card:nth-child(3n),
 .focuses-wrapp.primary-light .focuses-card:nth-child(3n){
     border-right: 0;
+    padding-right: 0;
+}
+.focuses-card:nth-child(4n){
+    padding-left: 0;
+}
+.focuses-wrapp .focuses-card:nth-last-child(-n+3){
+    border-bottom: 0;
+}
+.focuses-wrapp .focuses-card {
+    font-weight: 500;
 }
 .montesorri-wrapp{
     align-items: center;
+    overflow: visible;
 }
+.montessori-wrapp .swiper-wrapper{
+    display:flex;
+  }
+  
+  @media (max-width:1100px){
+    .montessori-wrapp .swiper-wrapper{
+      display:flex;
+      justify-content: flex-start;
+    }
+    .montesorri-item{
+        margin-left: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        flex: 100% 0 0 !important;
+    }
+  }
 .montesorri-item{
     position: relative;
-    flex: 0 0 calc(100% / 5);
+    /* flex: 0 0 calc(100% / 5); */
     max-width: 328px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 60px 0;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
+.montesorri-item:not(:first-child){
+    margin-left: -32px;
+}
+.montesorri-item.shape-1{
+    width: 320px;
+    flex: 320px 0  0;
+    padding: 60px 50px;
+    background: #1f6b8c;
+    -webkit-mask-image: url('../images/montessori-shape-5.svg');
+    mask-image: url('../images/montessori-shape-5.svg');
+}
+.montesorri-item.shape-2{
+    width: 252px;
+    flex: 252px 0  0;
+    background: #7FC0EB;
+    -webkit-mask-image: url('../images/montessori-shape-4.svg');
+    mask-image: url('../images/montessori-shape-4.svg');
+}
+.montesorri-item.shape-2 .text{
+    color: #006391;
+    margin-top: 24px;
+}
+.montesorri-item.shape-3{
+    width: 320px;
+    flex: 320px 0  0;
+    background: #A5CC1F;
+    -webkit-mask-image: url('../images/montessori-shape-3.svg');
+    mask-image: url('../images/montessori-shape-3.svg');
+    margin-left: -42px;
+}
+.montesorri-item.shape-3 .text{
+    color: #3A6B0C;
+}
+.montesorri-item.shape-4{
+    width: 328px;
+    flex: 328px 0  0;
+    background: #2883BF;
+    -webkit-mask-image: url('../images/montessori-shape-2.svg');
+    mask-image: url('../images/montessori-shape-2.svg');
+    margin-left: -42px;
+}
+.montesorri-item.shape-4 .text{
+    max-width: 215px;
+}
+.montesorri-item.shape-5{    
+    width: 328px;
+    flex: 328px 0  0;
+    background: #3A6B0C;
+    -webkit-mask-image: url('../images/montessori-shape-1.svg');
+    mask-image: url('../images/montessori-shape-1.svg');
+    margin-left: -70px;
+}
+.montesorri-item.shape-5 .text{
+    max-width: 224px;
+}
+.montesorri-item.shape-6{    
+    width: 328px;
+    flex: 328px 0  0;
+    background: #DCEE95;
+    -webkit-mask-image: url('../images/montessori-shape-6.svg');
+    mask-image: url('../images/montessori-shape-6.svg');
+}
+.montesorri-item.shape-6 .text{
+    max-width: 210px;
+}
+
 .montesorri-item .text{
-    padding: 16px;
+    /* padding: 16px;
     padding-top: 40px;
     margin: 0 auto;
-    max-width: 95%;
+    max-width: 95%; */
+    max-width: 174px;
 }
 .montesorri-item h3,
 .montesorri-item p{
     position: relative;
     z-index: 3;
+}
+.montesorri-item p{
+    letter-spacing: -2%;
 }
 .montesorri-item .svg{
     position: absolute;
@@ -584,6 +689,34 @@ dl.cus-list b{
     max-height: 280px;
     object-fit: cover;
     transform: translateX(-8%);
+    display: none;
+}
+.triangle-shape{
+    position: relative;
+    min-height: 500px;
+}
+.triangle-shape .montesorri-item{
+    margin-left: 0;
+    position: absolute;
+}
+.triangle-shape .montesorri-item.shape-4{
+    margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 10%;
+}
+.triangle-shape .montesorri-item.shape-3{
+    margin-left: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+}
+.triangle-shape .montesorri-item.shape-6{
+    margin-left: 0;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    transform: rotate(4.15deg);
 }
 
 .section-seven .bg{
@@ -755,6 +888,130 @@ canvas{
     position: relative;
     z-index: 3;
 }
+.kindergartenpage.elementary .with-dashed::before{
+    border-bottom: 1px dashed #00639140;
+}
+
+.kindergartenpage.elementary .circle{
+    width: clamp(240px, 33.333vw, 480px);
+    height: clamp(240px, 33.333vw, 480px);
+    background: #9ACDEF;
+    border-radius: 100%;
+    border: 2px dashed #006391;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    place-items: center;
+}
+
+@media only screen and (min-width: 1200px) {
+    .accent-wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* Putar wrapper sebesar sudut yang ditentukan */
+        transform: rotate(var(--angle));
+    }
+    .accent-content {
+        position: absolute;
+        top: 50%;
+        left: 100%; /* Menempatkan konten tepat di garis lingkaran */
+        transform: translate(var(--transx), -50%) rotate(calc(var(--angle) * -1));
+        /* Putar balik konten agar teks tetap tegak lurus */
+    }
+}
+
+
+
+.kindergartenpage.elementary .circle h3{
+    max-width: 248px;
+}
+.kindergartenpage.elementary .circle-wrap{
+    position: relative;
+    max-width: max-content;
+    border-radius: 100%;
+}
+.kindergartenpage.elementary .circle-wrap .circle-program, .accent-content{
+    padding: 12px;
+    font-family: Sora, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1em;
+    border-radius: 12px;
+    max-width: max-content;
+    position: absolute;
+    white-space: nowrap;
+}
+.kindergartenpage.elementary .circle-wrap .aksen{
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+.kindergartenpage.elementary .circle-wrap .circle-program.blue{
+    color: #006391;
+    border: 1px solid #006391;
+    background-color: #D7EBF9;
+    top: 52px;
+    right: calc(100% - 36px);
+}
+.kindergartenpage.elementary .circle-wrap .aksen.aksen-1{
+    /* left: calc(100% + 10px); */
+    /* bottom: 0; */
+    top: 3.8vw;
+    left: 2.4vw;
+    background: url(../images/ic-circle-vector-1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: translate(10%, 10%);
+}
+.kindergartenpage.elementary .circle-wrap .circle-program.green{
+    color: #3A6B0C;
+    border: 1px solid #3A6B0C;
+    background-color: #DCEE95;
+    bottom: 0;
+    right: calc(100% - 85px);
+}
+.kindergartenpage.elementary .circle-wrap .aksen.aksen-2{
+    /* left: calc(100% + 10px);
+    top: 0; */
+    left: 5vw;
+    bottom: 1vw;
+    background: url(../images/ic-circle-vector-2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.kindergartenpage.elementary .circle-wrap .circle-program.red{
+    color: #910C00;
+    border: 1px solid #910C00;
+    background-color: #F9DAD7;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 20px);
+}
+.kindergartenpage.elementary .circle-wrap .aksen.aksen-3{
+    /* right: calc(100% + 10px); */
+    right: -12px;
+    /* top: 50%; */
+    top: 12vw;
+    /* transform: translateY(-50%); */
+    background: url(../images/ic-circle-vector-3.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cl-pill{
+    padding: 8px 13px;
+    background: #9ACDEF;
+    border: 1px dashed #006391;
+    border-radius: 6px;
+    color: #006391;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+}
 
 .program-wrapp:not(:last-child),
 .team-wrapp:not(:last-child){
@@ -817,12 +1074,78 @@ canvas{
     box-shadow: none;
 }
 
+.curriculum-list li{
+    padding-left: 48px;
+    position: relative;
+}
+.curriculum-list li::before{
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url(../images/curi-icon-2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+}
+
 .kindergartenpage{
     margin-top: 0;
 }
+
 .kindergartenpage .masthead-animation{
     background: #CDE667;
     position: relative;
+}
+.breadcrumbs span + span::before{
+    content: "";
+    display: inline-flex;
+    align-self: center;
+    width: 0;
+    height: 0;
+    margin: 0 8px;
+    border-style: solid;
+    border-width: 4px 0px 4px 6.9px;
+    border-color: transparent transparent transparent #006391;
+    opacity: .5;
+
+}
+
+.frameworks-item{
+    position: relative;
+}
+.frameworks-item::before{
+    content: "";
+    width: 100%;
+    height: 50%;
+    max-height: 145px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.frameworks-item img, .frameworks-item span{
+    position: relative;
+    z-index: 3;
+}
+.frameworks-item img{
+    margin: 24px auto 16px;
+    max-width: 142px;
+}
+.frameworks-item span{
+    text-align: center;
+}
+
+.frameworks-item.blue::before{
+    background-color: #F4FDFF;
+}
+.frameworks-item.red::before{
+    background-color: #FEF7F6;
+}
+.frameworks-item.green::before{
+    background-color: #FCFEF6;
 }
 /* .kindergartenpage .masthead-animation::after{
     content: "";
@@ -908,6 +1231,92 @@ canvas{
     }
   }
 
+.kindergartenpage .section-two{
+    background-image: url(../images/kindergarten-sectwo-aksen.svg);
+    /* background-position: -5vw 120%; */
+    background-position: -14vw 21vw;
+    background-repeat: no-repeat;
+    /* background-size: 42.43vw 41.67vw; */
+    background-size: clamp(150px, 42.43vw, 611px) auto;
+}
+.kindergartenpage .section-three{
+}
+
+.swiper-dayactivity{
+    width: calc(100% + ((100vw - 100%) / 2));
+    margin-right: calc(-1 * ((100vw - 100%) / 2));
+}
+.swiper-dayactivity .swiper-slide:nth-child(odd){
+    transform: rotate(-1deg);
+}
+.swiper-dayactivity .swiper-slide:nth-child(odd):not(:first-child){
+    transform: rotate(-1deg);
+    /* transform: rotate(-1deg) translate(-52px, 0rem); */
+}
+.swiper-dayactivity .swiper-wrapper{
+    padding: 40px 0;
+}
+.swiper-dayactivity .swiper-slide:nth-child(even){
+    transform: rotate(3deg);
+    /* transform: rotate(3deg) translate(-10px, 0rem); */
+    transform-origin: top left;
+}
+
+
+.swiper-dayactivity-nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.dayactivity-prev,.dayactivity-next{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #FFF;
+    border-radius: 100%;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.dayactivity-prev:hover:not(.swiper-button-disabled),.dayactivity-next:hover:not(.swiper-button-disabled){
+    background-color: #cde667;
+    border-color: #cde667;
+    cursor: pointer;
+}
+.dayactivity-next::before,.dayactivity-prev::before{
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../images/ic-arrow-nav.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.dayactivity-prev{
+    transform: rotate(180deg);
+}
+.dayactivity-next.swiper-button-disabled,.dayactivity-prev.swiper-button-disabled{
+    opacity: .3;
+}
+.swiper-dayactivity-nav.blue .dayactivity-prev, .swiper-dayactivity-nav.blue .dayactivity-next{
+    border-color: #006391;
+}
+.swiper-dayactivity-nav.blue .dayactivity-prev::before, .swiper-dayactivity-nav.blue .dayactivity-next::before{
+    background-image: url(../images/ic-arrow-nav-blue.svg);
+}
+
+.swiper-dayactivity-nav.blue .dayactivity-prev:hover, .swiper-dayactivity-nav.blue .dayactivity-next:hover{
+    background-color: #006391;
+}
+.swiper-dayactivity-nav.blue .dayactivity-prev:hover::before, .swiper-dayactivity-nav.blue .dayactivity-next:hover::before{
+    background-image: url(../images/ic-arrow-nav.svg);
+}
+
+
 .enrollmentpage{
     margin-top: 72px;
     counter-reset: journey-counter;
@@ -964,7 +1373,48 @@ canvas{
     top: 8px;
     left: -16px;
 }
+.heading-w-dashed{
+    position: relative;
+}
+.heading-w-dashed::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #00639140;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    z-index: 1;
+}
 
+
+
+.cambridge{
+    width: 100%;
+    position: relative;
+}
+.cambridge::before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed #00639140;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+}
+.cambridge .img-box{
+    padding: 0 24px;
+    background: #FFF;
+    position: relative;
+    z-index: 10;
+    max-width: max-content;
+    margin: 0 auto;
+}
+.cambridge img{
+    margin: 0 auto;
+    box-shadow: 0px 6px 12px 0px #0000001A, 0px 88px 35px 0px #00000003, 0px 138px 38px 0px #00000000;
+
+}
 
 
 .facility-gallery .fg-item:nth-child(even) .fg-card{
@@ -988,11 +1438,87 @@ canvas{
     display: block;
 }
 
+.accordion-schedule .accordion-toggle .btn-expnd{
+    background-color: #FCFFEA;
+    border: 1px solid #3A6B0C;
+    color: #3A6B0C;
+}
+.accordion-schedule .accordion-toggle.active .btn-expnd{
+    background-color: #3A6B0C;
+    color: #FCFFEA;
+}
+.accordion-schedule .accordion-title .desc span + span::before{
+    content: "•";
+    color: #3A6B0C;
+    display: inline-flex;
+    margin: 0 12px;
+}
+
+.schedule-list .schedule-tiem{
+    padding: 16px;
+    border: 1px solid #3A6B0C;
+    border-radius: 12px;
+    color: #3A6B0C;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.1em;
+    font-weight: 600;
+    font-family: 'Sora';
+}
+.schedule-list .schedule-tiem.active{
+    background: #FFF;
+}
+.schedule-list table td{
+    padding: 0 4px;
+}
+
+.accordion-schedule .accordion-toggle .btn-expnd::before, .accordion-schedule .accordion-toggle .btn-expnd::after{
+    background-color: #3A6B0C;
+}
+
+.accordion-toggle .btn-expnd{
+    background: #FFF;
+    color: #006391;
+    font-size: 0;
+    position: relative;
+}
+.accordion-toggle .btn-expnd::before, .accordion-toggle .btn-expnd::after{
+    content: "";
+    width: 12.5px;
+    height: 1.5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #006391;
+    transition: all .3s ease-in-out;
+}
+.accordion-toggle .btn-expnd::after{
+    transform: rotate(90deg);
+}
+.accordion-toggle.active .btn-expnd::after{
+    transform: rotate(0);
+}
+.accordion-toggle.active .btn-expnd{
+    background: #006391;
+    color: #FFF;
+}
+.accordion-toggle.active .btn-expnd::before, .accordion-toggle.active .btn-expnd::after{
+    background-color: #FFF;
+}
+
 .contactusgal img{
     max-height: clamp(600px, 80vh, 800px);
     /* max-height: 800px; */
 }
 
+@media only screen and (min-width: 1200px) {
+    .swiper-dayactivity .swiper-slide{
+        width: auto !important;
+    }
+}
 @media only screen and (max-width: 1000px) {
     .header-logo{
         width: calc(4/12 * 100%);
@@ -1004,6 +1530,9 @@ canvas{
         max-width: 728px;
         margin: 0 auto;
         padding-inline: 20px;
+    }
+    .header .burger.menu-mobile{
+        top: 0;
     }
 
     .section-three .cloud-aksen:nth-child(1){
@@ -1129,9 +1658,84 @@ canvas{
     .contactusgal img{
         /* height: 600px; */
     }
+    .focuses-card:first-child{
+        border-bottom: 0;
+    }
+    .focuses-card:nth-child(3n){
+        padding-right: 24px;
+        border-right: 1px solid rgba(58, 107, 12, 15%);
+    }
     
+    .focuses-card:nth-child(4n){
+        padding-left: 24px;
+    }
+    
+    .focuses-card:nth-child(odd){
+        padding-left: 0;
+    }
+
+    .focuses-card:nth-child(3n){
+        border-top: 1px solid rgba(58, 107, 12, 15%);
+    }
+    .focuses-card:last-child{
+        border-right: 0;
+    }
+    
+    .montessori-wrapp{
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .montesorri-item{
+        margin-left: 0 !important;
+    }
+
+    .section-howwe .triangle-shape{
+        order: 2;
+    }
+    .section-howwe .container{
+        flex-direction: column;
+    }
+    .section-howwe .triangle-shape+div{
+        order: 1;
+        width: 100%;
+    }
+    .triangle-shape{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .triangle-shape .montesorri-item{
+        width: max-content !important;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .triangle-shape .montesorri-item.shape-4{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .triangle-shape .montesorri-item.shape-4{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .triangle-shape .montesorri-item.shape-3{
+        left: 30%;
+        transform: translateX(-50%);
+    }
+    .triangle-shape .montesorri-item.shape-6{
+        right: 30%;
+        transform: translateX(50%);
+    }
+    .kindergartenpage.elementary .circle-wrap .circle-program{
+        font-size: 16px;
+    }
+    .kindergartenpage.elementary .circle-wrap .circle-program.blue{
+        right: calc(100% + 10px);
+    }
+    .kindergartenpage.elementary .circle-wrap .circle-program.green{
+        right: calc(100% - 5px);
+    }
     
 }
+
 /* Responsive */
 @media only screen and (max-width: 500px) {
     
@@ -1145,7 +1749,7 @@ canvas{
         max-width: 100%;
         padding: 0;
     }
-    .section-two .container{
+    .homepage .section-two .container{
         height: 100vh;
     }
     .section-three h2,
@@ -1272,13 +1876,48 @@ canvas{
         display: none;
     }
     .contactusgal img{
-<<<<<<< HEAD
-        /* max-height: 200px; */
-    }
-    .aboutpage .section-three .cloud-aksen:nth-child(1){
-        width: 110px;
-=======
         max-height: 200px;
->>>>>>> origin/main
     }
+
+    .focuses-card{
+        border-right: 0 !important;
+        padding-left: 24px !important;
+        border-top: 1px solid rgba(58, 107, 12, 15%);
+        border-bottom: 0;
+        min-height: 150px;
+    }
+    .focuses-card:first-child{
+        border-top: 0;
+    }
+
+    .triangle-shape .montesorri-item{
+        position: relative !important;
+        left: inherit !important;
+        right: inherit !important;
+        bottom: inherit !important;
+        top: inherit !important;
+        margin: auto !important;
+        transform: translateX(0) !important;
+    }
+    .triangle-shape .montesorri-item .text h3{
+        font-size: 18px;
+    }
+    .kindergartenpage.elementary .circle-wrap .circle{
+        margin-bottom: 24px;
+    }
+    .kindergartenpage.elementary .circle-wrap .circle-program{
+        position: relative;
+        left: inherit !important;
+        right: inherit !important;
+        top: inherit !important;
+        bottom: inherit !important;
+        transform: translate(0) !important;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .kindergartenpage.elementary .circle-wrap .circle-program:not(:last-child){
+        margin-bottom: 16px;
+    }
+
 }
+
