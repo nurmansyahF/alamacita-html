@@ -908,23 +908,52 @@ canvas{
 }
 
 @media only screen and (min-width: 1200px) {
-    .accent-wrapper {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        /* Putar wrapper sebesar sudut yang ditentukan */
-        transform: rotate(var(--angle));
-    }
-    .accent-content {
-        position: absolute;
-        top: 50%;
-        left: 100%; /* Menempatkan konten tepat di garis lingkaran */
-        transform: translate(var(--transx), -50%) rotate(calc(var(--angle) * -1));
-        /* Putar balik konten agar teks tetap tegak lurus */
-    }
+    
 }
 
+.accent-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Putar wrapper sebesar sudut yang ditentukan */
+    transform: rotate(var(--angle));
+}
+.accent-content {
+    position: absolute;
+    top: 50%;
+    left: 100%; /* Menempatkan konten tepat di garis lingkaran */
+    transform: translate(var(--transx), -50%) rotate(calc(var(--angle) * -1));
+    /* Putar balik konten agar teks tetap tegak lurus */
+}
 
+.accent-wrapper .accent1, .accent2, .accent3{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.accent-wrapper .accent1{    
+    background-image: url(../images/ic-circle-vector-1.svg);
+}
+.accent-wrapper .accent2{    
+    background-image: url(../images/ic-circle-vector-2.svg);
+}
+.accent-wrapper .accent3{    
+    background-image: url(../images/ic-circle-vector-3.svg);
+}
+
+@media only screen and (max-width: 500px) {
+    .accent-showsm .accent-content, .accent-showsm .accent-wrapper {
+        position: relative;
+        left: inherit;
+        right: inherit;
+        top: inherit;
+        bottom: inherit;
+        transform: translate(0, 0) rotate(0deg);
+    }  
+}
 
 .kindergartenpage.elementary .circle h3{
     max-width: 248px;
@@ -934,7 +963,7 @@ canvas{
     max-width: max-content;
     border-radius: 100%;
 }
-.kindergartenpage.elementary .circle-wrap .circle-program, .accent-content{
+.kindergartenpage.elementary .circle-wrap .circle-program{
     padding: 12px;
     font-family: Sora, sans-serif;
     font-size: 24px;
