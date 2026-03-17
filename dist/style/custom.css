@@ -602,7 +602,8 @@ dl.cus-list b{
 .montesorri-item.shape-1{
     width: 320px;
     flex: 320px 0  0;
-    padding: 60px 50px;
+    /* padding: 60px 50px; */
+    padding: 44px 50px;
     background: #1f6b8c;
     -webkit-mask-image: url('../images/montessori-shape-5.svg');
     mask-image: url('../images/montessori-shape-5.svg');
@@ -907,6 +908,14 @@ canvas{
     place-items: center;
 }
 
+.kindergartenpage.elementary #accordion2 .curriculum-list li::before{
+    transform: rotate(0);
+}
+.kindergartenpage.elementary #accordion3 .curriculum-list li::before{
+    transform: rotate(0);
+    background-image: url(../images/curi-icon-1.svg);
+}
+
 @media only screen and (min-width: 1200px) {
     
 }
@@ -1111,9 +1120,10 @@ canvas{
     content: "";
     width: 24px;
     height: 24px;
-    background: url(../images/curi-icon-2.svg);
+    background-image: url(../images/curi-icon-2.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     position: absolute;
     left: 0;
     top: 0;
@@ -1161,7 +1171,8 @@ canvas{
 }
 .frameworks-item img{
     margin: 24px auto 16px;
-    max-width: 142px;
+    /* max-width: 142px; */
+    max-width: 114px;
 }
 .frameworks-item span{
     text-align: center;
