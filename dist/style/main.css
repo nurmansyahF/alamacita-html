@@ -290,6 +290,9 @@
   .top-\[34\%\] {
     top: 34%;
   }
+  .-right-3 {
+    right: calc(var(--spacing) * -3);
+  }
   .-right-3\.5 {
     right: calc(var(--spacing) * -3.5);
   }
@@ -346,6 +349,9 @@
   }
   .bottom-\[110px\] {
     bottom: 110px;
+  }
+  .-left-3 {
+    left: calc(var(--spacing) * -3);
   }
   .-left-3\.5 {
     left: calc(var(--spacing) * -3.5);
@@ -822,8 +828,14 @@
   .min-h-screen {
     min-height: 100vh;
   }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
   .w-1\/2 {
     width: calc(1/2 * 100%);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
   }
   .w-2\/3 {
     width: calc(2/3 * 100%);
@@ -872,6 +884,9 @@
   }
   .w-screen {
     width: 100vw;
+  }
+  .max-w-5 {
+    max-width: calc(var(--spacing) * 5);
   }
   .max-w-5\/12 {
     max-width: calc(5/12 * 100%);
@@ -932,6 +947,9 @@
   }
   .flex-1\/2 {
     flex: calc(1/2 * 100%);
+  }
+  .flex-5 {
+    flex: 5;
   }
   .flex-5\/12 {
     flex: calc(5/12 * 100%);
@@ -3695,6 +3713,11 @@
   .lg\:grid-cols-\[300px_1fr\] {
     @media (width >= 64rem) {
       grid-template-columns: 300px 1fr;
+    }
+  }
+  .lg\:flex-row {
+    @media (width >= 64rem) {
+      flex-direction: row;
     }
   }
   .lg\:flex-row-reverse {

@@ -1,42 +1,117 @@
 $(document).ready(function() {
-    if (window.matchMedia("(min-width: 1023px)").matches) {
-        // Initialize Lenis hanya di desktop
-        const lenis = new Lenis({
+    // if (window.matchMedia("(min-width: 1023px)").matches) {
+    //     // Initialize Lenis hanya di desktop
+    //     const lenis = new Lenis({
+    //         autoRaf: true,
+    //         duration: 1.1, // Durasi scroll dalam detik
+    //         smooth: true
+    //     });
+    
+    //     lenis.on('scroll', (e) => {
+    //         // console.log(e);
+    //     });
+    
+    //     function raf(time) {
+    //         lenis.raf(time);
+    //         requestAnimationFrame(raf);
+    //     }
+    //     requestAnimationFrame(raf);
+
+    //     window.addEventListener('scroll', () => {
+    //         const maxScroll = document.body.scrollHeight - window.innerHeight;
+    //         const scrollY = window.scrollY;
+        
+    //         // Persentase scroll dari 0 ke 1
+    //         const scrollProgress = scrollY / maxScroll;
+        
+    //         // Ukuran mask dinamis dari 30% ke 100%
+    //         const minSize = 50;
+    //         const maxSize = 100;
+    //         const currentSize = minSize + (maxSize - minSize) * scrollProgress * 30;
+    //         // Apply ke elemen
+    //         $('.masthead-animation .bg-animation').css({
+    //             '-webkit-mask-size': currentSize + '%',
+    //             'mask-size': currentSize + '%'
+    //           });
+    //         // $('.masthead-animation .bg-animation:after').style.maskSize = `${currentSize}%`;
+    //       });
+
+    // }
+
+    $(function () {
+        const isDesktop = window.matchMedia("(min-width: 1023px)").matches;
+      
+        // Config per device
+        const config = {
+          desktop: { min: 50, max: 100, multiplier: 30 },
+          mobile: { min: 100, max: 200, multiplier: 50 }
+        };
+      
+        const { min, max, multiplier } = isDesktop ? config.desktop : config.mobile;
+      
+        let lenis;
+      
+        // Init Lenis (desktop only)
+        if (isDesktop) {
+          lenis = new Lenis({
             autoRaf: true,
-            duration: 1.1, // Durasi scroll dalam detik
+            duration: 1.1,
             smooth: true
-        });
-    
-        lenis.on('scroll', (e) => {
-            // console.log(e);
-        });
-    
-        function raf(time) {
+          });
+      
+          function raf(time) {
             lenis.raf(time);
             requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
         }
-        requestAnimationFrame(raf);
-
-        window.addEventListener('scroll', () => {
-            const maxScroll = document.body.scrollHeight - window.innerHeight;
-            const scrollY = window.scrollY;
-        
-            // Persentase scroll dari 0 ke 1
-            const scrollProgress = scrollY / maxScroll;
-        
-            // Ukuran mask dinamis dari 30% ke 100%
-            const minSize = 50;
-            const maxSize = 100;
-            const currentSize = minSize + (maxSize - minSize) * scrollProgress * 30;
-            // Apply ke elemen
-            $('.masthead-animation .bg-animation').css({
-                '-webkit-mask-size': currentSize + '%',
-                'mask-size': currentSize + '%'
-              });
-            // $('.masthead-animation .bg-animation:after').style.maskSize = `${currentSize}%`;
+      
+        // Scroll handler
+        function handleScroll(scrollY) {
+          const maxScroll = document.body.scrollHeight - window.innerHeight;
+          const currentScroll = scrollY ?? $(window).scrollTop();
+      
+          const scrollProgress = currentScroll / maxScroll;
+      
+          const currentSize =
+            min + (max - min) * scrollProgress * multiplier;
+      
+          $('.masthead-animation .bg-animation').css({
+            '-webkit-mask-size': currentSize + '%',
+            'mask-size': currentSize + '%'
           });
+        }
+      
+        // Event binding
+        if (isDesktop && lenis) {
+          lenis.on('scroll', ({ scroll }) => {
+            handleScroll(scroll);
+          });
+        } else {
+          $(window).on('scroll', function () {
+            handleScroll();
+          });
+        }
+        lenis.on('scroll', ({ scroll }) => {
+            var scrollTop = scroll;
+            var windowHeight = window.innerHeight;
+        
+            $('.paralax').each(function() {
+                var parent = $(this);
+                var parentOffset = parent.offset().top;
+        
+                if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
+                    var offset = (scrollTop - parentOffset) * 0.1;
+        
+                    parent.find('.bg').css({
+                        'transform': 'translate3d(0,' + offset + 'px,0)'
+                    });
+                }
+            });
+        });
 
-    }
+
+      });
 
     // INLINE SVG
     jQuery("img.svg").each(function(i) {
@@ -79,7 +154,7 @@ $(document).ready(function() {
             // Jika scroll ke bawah, hapus class 'fixed'
             else if (scrollTop > lastScrollTop) {
                 header.removeClass('fix').addClass('sticky');
-                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0 || $('main.contactuspage').length > 0 || $('main.dinamicheader').length > 0 || $('main.enrollmentpage').length > 0) {
+                if($('main.elementary').length > 0 || $('main.kindergartenpage').length > 0 || $('main.contactuspage').length > 0 || $('main.dinamicheader').length > 0 || $('main.enrollmentpage').length > 0 || $('main.homepage').length > 0) {
                     header.addClass('bg-white')
                 }
             }
@@ -129,35 +204,47 @@ $(document).ready(function() {
     // });
 
     
-    $(window).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        var windowHeight = $(window).height();
+    // $(window).scroll(function() {
+    //     var scrollTop = $(this).scrollTop();
+    //     var windowHeight = $(window).height();
     
-        $('.paralax').each(function() {
-            var parent = $(this);
-            var parentOffset = parent.offset().top; // Get the offset of the current parent
+    //     // $('.paralax').each(function() {
+    //     //     var parent = $(this);
+    //     //     var parentOffset = parent.offset().top; // Get the offset of the current parent
     
-            // Check if the current scroll position is within the bounds of the parent
-            if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
-                var offset = (scrollTop - parentOffset) * 0.1; // Adjust parallax speed
-                parent.find('.bg').css({
-                    'background-position': 'center ' + offset + 'px'
-                });
-            }
-        });
-        // $('.rellax').each(function() {
-        //     var parent = $(this);
-        //     var parentOffset = parent.offset().top; // Get the offset of the current parent
+    //     //     // Check if the current scroll position is within the bounds of the parent
+    //     //     if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
+    //     //         var offset = (scrollTop - parentOffset) * 0.1; // Adjust parallax speed
+    //     //         parent.find('.bg').css({
+    //     //             'background-position': 'center ' + offset + 'px'
+    //     //         });
+    //     //     }
+    //     // });
+    //     $('.paralax').each(function() {
+    //         var parent = $(this);
+    //         var parentOffset = parent.offset().top;
+        
+    //         if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
+    //             var offset = (scrollTop - parentOffset) * 0.1;
+        
+    //             parent.find('.bg').css({
+    //                 'transform': 'translateY(' + offset + 'px)'
+    //             });
+    //         }
+    //     });
+    //     // $('.rellax').each(function() {
+    //     //     var parent = $(this);
+    //     //     var parentOffset = parent.offset().top; // Get the offset of the current parent
     
-        //     // Check if the current scroll position is within the bounds of the parent
-        //     if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
-        //         var offset = (scrollTop - parentOffset) * 0.5; // Adjust parallax speed
-        //         parent.find('.bg').css({
-        //             'transform': 'translate3d(0px, ' + offset + 'px, 0px)'
-        //         });
-        //     }
-        // });
-    });
+    //     //     // Check if the current scroll position is within the bounds of the parent
+    //     //     if (scrollTop > parentOffset - windowHeight && scrollTop < parentOffset + parent.outerHeight()) {
+    //     //         var offset = (scrollTop - parentOffset) * 0.5; // Adjust parallax speed
+    //     //         parent.find('.bg').css({
+    //     //             'transform': 'translate3d(0px, ' + offset + 'px, 0px)'
+    //     //         });
+    //     //     }
+    //     // });
+    // });
 
     $(document).on("scroll", function () {
         let scrollTop = $(window).scrollTop();
@@ -1218,22 +1305,22 @@ let swiper;
 let sdayactive;
 
 function initSwiper() {
-  if (window.innerWidth <= 1100 && !swiper) {
-    swiper = new Swiper('.montessori-wrapp', {
-        slidesPerView: 1,  
-        breakpoints: {
-          768: {
-            slidesPerView: 3,
-            // allowTouchMove: false
-          }
-        }
-      });
-  } 
+//   if (window.innerWidth <= 1100 && !swiper) {
+//     swiper = new Swiper('.montessori-wrapp', {
+//         slidesPerView: 1,  
+//         breakpoints: {
+//           768: {
+//             slidesPerView: 3,
+//             // allowTouchMove: false
+//           }
+//         }
+//       });
+//   } 
   
-  if (window.innerWidth > 768 && swiper) {
-    swiper.destroy(true, true);
-    swiper = undefined;
-  }
+//   if (window.innerWidth > 768 && swiper) {
+//     swiper.destroy(true, true);
+//     swiper = undefined;
+//   }
   sdayactive = new Swiper('.swiper-dayactivity',{
     slidesPerView: 1.2,
     loop: false,
