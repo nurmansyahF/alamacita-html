@@ -909,6 +909,9 @@
   .max-w-\[330px\] {
     max-width: 330px;
   }
+  .max-w-\[333px\] {
+    max-width: 333px;
+  }
   .max-w-\[418px\] {
     max-width: 418px;
   }
@@ -3632,6 +3635,11 @@
       max-width: 240px;
     }
   }
+  .lg\:max-w-\[382px\] {
+    @media (width >= 64rem) {
+      max-width: 382px;
+    }
+  }
   .lg\:max-w-\[478px\] {
     @media (width >= 64rem) {
       max-width: 478px;
@@ -3765,6 +3773,11 @@
   .lg\:bg-auto {
     @media (width >= 64rem) {
       background-size: auto;
+    }
+  }
+  .lg\:p-6 {
+    @media (width >= 64rem) {
+      padding: calc(var(--spacing) * 6);
     }
   }
   .lg\:p-10 {

@@ -897,6 +897,8 @@ canvas{
     position: relative;
     z-index: 3;
 }
+
+.kindergartenpage .bigtext-marquee .marquee-wrapper span{font-weight: 400;}
 .kindergartenpage.elementary .with-dashed::before{
     border-bottom: 1px dashed #00639140;
 }
@@ -924,8 +926,41 @@ canvas{
     background-image: url(../images/curi-icon-1.svg);
 }
 
-@media only screen and (min-width: 1200px) {
-    
+.kindergartenpage.elementary .box-cambridge{
+    position: relative;
+}
+.kindergartenpage.elementary .box-cambridge::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #7FC0EB;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.kindergartenpage.elementary .box-cambridge span, .kindergartenpage.elementary .box-cambridge img{
+    position: relative;
+    z-index: 2;
+}
+.kindergartenpage.elementary .box-cambridge::after{
+    content: "";
+    width: 100vw;
+    max-width: 1368px;
+    height: 1px;
+    border-top: 1px dashed #00639140;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin: 0 auto;
+    transform: translate(50%, 50%);
+    z-index: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .kindergartenpage.elementary .box-cambridge::after{
+        max-width: 728px;
+    }
 }
 
 .accent-wrapper {
@@ -969,7 +1004,7 @@ canvas{
         top: inherit;
         bottom: inherit;
         transform: translate(0, 0) rotate(0deg);
-    }  
+    }
 }
 
 .kindergartenpage.elementary .circle h3{
@@ -1603,6 +1638,9 @@ canvas{
     /* max-height: 800px; */
 }
 
+.font-sora{font-weight: 400;}
+.homepage .section-five .bg, .homepage .section-seven .bg{background-size: cover;}
+
 @media only screen and (min-width: 1200px) {
     .swiper-dayactivity .swiper-slide{
         width: auto !important;
@@ -1837,6 +1875,8 @@ canvas{
     }
     
 }
+
+
 
 /* Responsive */
 @media only screen and (max-width: 500px) {
