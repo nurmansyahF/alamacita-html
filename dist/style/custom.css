@@ -898,7 +898,7 @@ canvas{
     z-index: 3;
 }
 
-.kindergartenpage .bigtext-marquee .marquee-wrapper span{font-weight: 400;}
+.kindergartenpage .bigtext-marquee .marquee-wrapper span{font-weight: 400; letter-spacing: -0.05em;}
 .kindergartenpage.elementary .with-dashed::before{
     border-bottom: 1px dashed #00639140;
 }
