@@ -1638,7 +1638,7 @@ canvas{
     /* max-height: 800px; */
 }
 
-.font-sora:not(.font-medium):not(.font-semibold){font-weight: 400;}
+.font-sora:not(.font-medium):not(.font-semibold):not(.font-[600]){font-weight: 400;}
 .homepage .section-five .bg, .homepage .section-seven .bg{background-size: cover;}
 
 @media only screen and (min-width: 1200px) {
